@@ -1,33 +1,35 @@
 <template>
-  <button :style="{color}">
-    <slot/>
-  </button>
+  <button>Button</button>
 </template>
 
 <style scoped>
 button {
-  transition: all 0.5s;
-  font-size: 17px;
-  padding: 1ch 2ch;
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
   background-color: white;
-  color: #000;
-  font-family: Roboto, sans-serif;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 2px 2px 0px hsl(0, 0%, 90%),
-  4px 4px 0px hsl(0, 0%, 80%),
-  6px 6px 0px hsl(0, 0%, 70%),
-  8px 8px 0px hsl(0, 0%, 60%),
-  10px 10px 0px hsl(0, 0%, 50%),
-  12px 12px 0px hsl(0, 0%, 40%),
-  14px 14px 0px hsl(0, 0%, 30%),
-  16px 16px 0px hsl(0, 0%, 20%),
-  18px 18px 0px hsl(0, 0%, 10%);
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
 }
 
 button:hover {
-  background-color: hsl(0, 0%, 50%);
-  color: #fff;
-  box-shadow: none;
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
 }
+
+button:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
 </style>

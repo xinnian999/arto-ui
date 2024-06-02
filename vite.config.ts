@@ -22,6 +22,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  define: { 'process.env.NODE_ENV': '"production"' },
   build: {
     lib: {
       entry: fileURLToPath(new URL('./src/release.ts', import.meta.url)), //指定组件编译入口文件

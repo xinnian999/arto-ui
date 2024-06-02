@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 // import UI from '../dist/fancy-ui'
-import UI from './release'
+import FancyUI from './release'
+import '@/assets/main.css'
 
 
-createApp(App).use(UI).mount('#app')
+createApp(App).use(FancyUI).mount('#app')
