@@ -3,12 +3,11 @@
 </script>
 
 <template>
-  <fa-button >点我</fa-button>
+  <fa-button-1>点我</fa-button-1>
 </template>
 
 <style scoped>
-.fa-button{
+.fa-button {
   color: aqua;
 }
-
 </style>

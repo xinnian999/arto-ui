@@ -1,18 +1,21 @@
 import { defineCustomElement } from 'vue'
-import Button from '@/components/Button1.ce.vue'
 
 const componentGlobs = import.meta.glob('@/components/*.ce.vue', { eager: true })
 
-const components=Object.entries(componentGlobs).map(([key,value])=>{
-  console.log(key,value)
-})
+const components = Object.entries(componentGlobs).reduce((acc, [k, v]) => {
+  const fileName = k.split('/')[3].split('.')[0]
+  const [name, num] = fileName.match(/(\D+)(\d+)/)?.slice(1)!
+  const key = `fa-${name}-${num}`
 
-// console.log(components)
+  const value = function () {
+    customElements.define(key, defineCustomElement(v.default))
+  }
 
-const FaButton = defineCustomElement(Button)
-
-export { FaButton }
+  return { ...acc, [key]: value }
+}, {})
 
 export default () => {
-  customElements.define('fa-button', FaButton)
+  Object.values(components).forEach((component) => {
+    new component()
+  })
 }
