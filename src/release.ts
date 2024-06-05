@@ -1,4 +1,5 @@
 import { defineCustomElement } from 'vue'
+import { toCamelCase } from '@/utils/toCamelCase'
 
 const componentGlobs = import.meta.glob('@/components/*.ce.vue', { eager: true })
 
@@ -11,11 +12,11 @@ const components = Object.entries(componentGlobs).reduce((acc, [k, v]) => {
     customElements.define(key, defineCustomElement(v.default))
   }
 
-  return { ...acc, [key]: value }
+  return { ...acc, [toCamelCase(key)]: value }
 }, {})
 
+export const { FaButton1 } = components
+
 export default () => {
-  Object.values(components).forEach((component) => {
-    new component()
-  })
+  Object.values(components).forEach((register) => register())
 }

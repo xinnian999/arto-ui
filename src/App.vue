@@ -1,5 +1,7 @@
 <script setup lang="ts">
-// import FaButton from '@/components/Button.ce.vue'
+import { FaButton1 } from '@/release'
+
+new FaButton1()
 </script>
 
 <template>
