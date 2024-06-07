@@ -1,5 +1,5 @@
 import { defineCustomElement } from 'vue'
-import { toCamelCase } from '@/utils/toCamelCase'
+import { toCamelCase } from '@/utils'
 
 const componentGlobs = import.meta.glob<any>('@/components/*.ce.vue', { eager: true })
 
