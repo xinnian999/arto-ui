@@ -4,22 +4,37 @@
 
 <script setup lang="ts">
 import { getDarkerColor, getLighterColor } from '@/utils'
+import { computed } from 'vue'
 
-const props = withDefaults(defineProps<{ color: string }>(), { color: '#2c9caf' })
+type Props = {
+  color: string
+  width: any
+  height: any
+}
 
-const styles = `
---primary-color:${props.color};
---outline-color:${getLighterColor(props.color, 10)};
---box-shadow-color:${getDarkerColor(props.color, 20)};
-`
+const props = withDefaults(defineProps<Props>(), {
+  color: '#2c9caf'
+})
+
+const styles = computed(() => {
+  const { color, width, height } = props
+
+  return {
+    ['--width']: width,
+    ['--height']: height,
+    ['--primary-color']: color,
+    ['--outline-color']: getLighterColor(color, 30),
+    ['--box-shadow-color']: getDarkerColor(color, 30)
+  }
+})
 </script>
 
 <style scoped lang="scss">
-$primary-color: var(--primary-color, #2c9caf);
-$outline-color: var(--outline-color, #70bdca);
-$box-shadow-color: var(--box-shadow-color, #268391);
+$primary-color: var(--primary-color);
 
 button {
+  width: var(--width);
+  height: var(--height);
   padding: 1em 2em;
   border: none;
   border-radius: 5px;
@@ -28,7 +43,7 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   color: $primary-color;
-  transition: all 1000ms;
+  transition: all 1s;
   font-size: 15px;
   position: relative;
   overflow: hidden;
@@ -38,8 +53,12 @@ button {
 button:hover {
   color: #ffffff;
   transform: scale(1.1);
-  outline: 2px solid $outline-color;
-  box-shadow: 4px 5px 17px -4px $box-shadow-color;
+  outline: 2px solid var(--outline-color);
+  box-shadow: 4px 5px 17px -4px var(--box-shadow-color);
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 button::before {

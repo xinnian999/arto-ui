@@ -7,7 +7,7 @@ new FaButton2()
 
 <template>
   <!--  <fa-button-1>点我</fa-button-1>-->
-  <fa-button-2 color="#999">点我</fa-button-2>
+  <fa-button-2>点我</fa-button-2>
 </template>
 
 <style scoped></style>
