@@ -4,4 +4,6 @@ import App from './App.vue'
 import FancyUI from './release'
 import '@/assets/main.css'
 
+new FancyUI()
+
 createApp(App).mount('#app')

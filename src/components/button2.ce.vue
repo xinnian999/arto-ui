@@ -1,10 +1,10 @@
 <template>
-  <button :style="styles"><slot /></button>
+  <button><slot /></button>
 </template>
 
 <script setup lang="ts">
+import { computed, toRefs } from 'vue'
 import { getDarkerColor, getLighterColor } from '@/utils'
-import { computed } from 'vue'
 
 type Props = {
   color: string
@@ -13,28 +13,23 @@ type Props = {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: '#2c9caf'
+  color: '#2c9caf',
+  width: 'auto',
+  height: 'auto'
 })
 
-const styles = computed(() => {
-  const { color, width, height } = props
+const { color, width, height } = toRefs(props)
 
-  return {
-    ['--width']: width,
-    ['--height']: height,
-    ['--primary-color']: color,
-    ['--outline-color']: getLighterColor(color, 30),
-    ['--box-shadow-color']: getDarkerColor(color, 30)
-  }
-})
+const outlineColor = computed(() => getLighterColor(color.value, 30))
+const boxShadowColor = computed(() => getDarkerColor(color.value, 30))
 </script>
 
 <style scoped lang="scss">
-$primary-color: var(--primary-color);
+$primary-color: v-bind(color);
 
 button {
-  width: var(--width);
-  height: var(--height);
+  width: v-bind(width);
+  height: v-bind(height);
   padding: 1em 2em;
   border: none;
   border-radius: 5px;
@@ -53,8 +48,8 @@ button {
 button:hover {
   color: #ffffff;
   transform: scale(1.1);
-  outline: 2px solid var(--outline-color);
-  box-shadow: 4px 5px 17px -4px var(--box-shadow-color);
+  outline: 2px solid v-bind(outlineColor);
+  box-shadow: 4px 5px 17px -4px v-bind(boxShadowColor);
 }
 
 button:active {
