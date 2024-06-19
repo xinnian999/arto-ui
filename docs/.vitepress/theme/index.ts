@@ -1,10 +1,12 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import FancyUI from '@/release/index'
-
-new FancyUI()
 
 export default {
   extends: DefaultTheme,
-  enhanceApp({ app }) {}
+  async enhanceApp({ app }) {
+    if (!import.meta.env.SSR) {
+      const { default: FancyUI } = await import('@/release/index')
+      new FancyUI()
+    }
+  }
 } satisfies Theme
