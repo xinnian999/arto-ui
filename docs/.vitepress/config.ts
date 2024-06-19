@@ -17,7 +17,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: '指南', link: '/guide/introduction' },
-      { text: '组件', link: '/components/light/button/1/' }
+      { text: '组件', link: '/components/light/button/1' }
     ],
 
     sidebar: {
@@ -27,20 +27,32 @@ export default defineConfig({
       ],
       '/components/': [
         {
-          text: '浅色主题',
+          text: '浅色组件',
 
           items: [
             {
               text: '按钮',
               collapsed: true,
               items: [
-                { text: '按钮1', link: '/components/light/button/1/' },
-                { text: '按钮2', link: '/components/light/button/2/' }
+                { text: '按钮1', link: '/components/light/button/1' },
+                { text: '按钮2', link: '/components/light/button/2' }
               ]
             }
           ]
         },
-        { text: '深色主题', link: '/guide/use-vue' }
+        {
+          text: '深色组件',
+          items: [
+            {
+              text: '按钮',
+              collapsed: true,
+              items: [
+                { text: '按钮1', link: '/components/dark/button/1' },
+                { text: '按钮2', link: '/components/dark/button/2' }
+              ]
+            }
+          ]
+        }
       ]
     },
 
