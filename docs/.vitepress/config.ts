@@ -16,13 +16,31 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: '指南', link: '/guide/introduction' }
+      { text: '指南', link: '/guide/introduction' },
+      { text: '组件', link: '/components/light/button/1/' }
     ],
 
     sidebar: {
       '/guide/': [
         { text: '简介', link: '/guide/introduction' },
         { text: '在Vue中使用', link: '/guide/use-vue' }
+      ],
+      '/components/': [
+        {
+          text: '浅色主题',
+
+          items: [
+            {
+              text: '按钮',
+              collapsed: true,
+              items: [
+                { text: '按钮1', link: '/components/light/button/1/' },
+                { text: '按钮2', link: '/components/light/button/2/' }
+              ]
+            }
+          ]
+        },
+        { text: '深色主题', link: '/guide/use-vue' }
       ]
     },
 

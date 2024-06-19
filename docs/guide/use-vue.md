@@ -29,11 +29,11 @@ createApp(App).mount('#app')
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { FaButton1, FaButton2 } from 'fancy-ui'
+import { FaLightButton1, FaLightButton1 } from 'fancy-ui'
 
-new FaButton1()
+new FaLightButton1()
 
-new FaButton2()
+new FaLightButton1()
 
 createApp(App).mount('#app')
 ```
@@ -42,11 +42,11 @@ createApp(App).mount('#app')
 
 根据注册的组件名，驼峰转为小写分割
 
-<fa-button-1>按钮</fa-button-1>
+<fa-light-button-1>按钮</fa-light-button-1>
 
 ```vue
 <template>
-  <fa-button-1>按钮</fa-button-1>
+  <fa-light-button-1>按钮</fa-light-button-1>
 </template>
 
 ```

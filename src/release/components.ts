@@ -6,21 +6,18 @@ const componentGlobs = import.meta.glob<any>('@/components/*.ce.vue', { eager: t
 const components: { [key: string]: { new (): void } } = Object.entries(componentGlobs).reduce(
   (acc, [k, v]) => {
     const fileName = k.split('/')[3].split('.')[0]
-    // eslint-disable-next-line no-unsafe-optional-chaining
-    const [name, num] = fileName.match(/(\D+)(\d+)/)?.slice(1)!
-    const key = `fa-${name}-${num}`
-
+    console.log(fileName)
     const value = class {
       constructor() {
-        customElements.define(key, defineCustomElement(v.default))
+        customElements.define(fileName, defineCustomElement(v.default))
       }
     }
 
-    return { ...acc, [toCamelCase(key)]: value }
+    return { ...acc, [toCamelCase(fileName)]: value }
   },
   {}
 )
 
 export default components
 
-export const { FaButton1, FaButton2 } = components
+export const { FaLightButton1, FaLightButton2 } = components
