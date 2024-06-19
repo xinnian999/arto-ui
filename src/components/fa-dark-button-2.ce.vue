@@ -5,7 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, toRefs } from 'vue'
+import { toRefs } from 'vue'
+
+defineOptions({ inheritAttrs: false })
 
 type Props = {
   color: string
@@ -38,6 +40,7 @@ $primary-color: v-bind(color);
   text-transform: uppercase;
   transition: 0.5s;
   transition-property: box-shadow;
+  cursor: pointer;
 }
 
 .shadow__btn {
@@ -51,5 +54,10 @@ $primary-color: v-bind(color);
     0 0 25px $primary-color,
     0 0 50px $primary-color,
     0 0 100px $primary-color;
+}
+
+.shadow__btn:active {
+  transition: transform 0.3s;
+  transform: scale(0.95);
 }
 </style>

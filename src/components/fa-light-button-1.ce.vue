@@ -6,6 +6,8 @@
 import { computed, toRefs } from 'vue'
 import { getDarkerColor } from '@/utils'
 
+defineOptions({ inheritAttrs: false })
+
 type Props = {
   color: string
   width: any

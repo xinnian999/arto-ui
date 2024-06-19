@@ -158,6 +158,8 @@
 import { computed, toRefs } from 'vue'
 import { getDarkerColor, getLighterColor } from '@/utils'
 
+defineOptions({ inheritAttrs: false })
+
 type Props = {
   color: string
   width: any
@@ -323,6 +325,11 @@ button:hover .star-6 {
   height: auto;
   filter: drop-shadow(0 0 10px #fffdef);
   z-index: 2;
+}
+
+button:active {
+  transition: transform 0.3s;
+  transform: scale(0.95);
 }
 
 .fil0 {
