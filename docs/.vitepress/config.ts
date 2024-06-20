@@ -12,14 +12,17 @@ export default defineConfig({
       }
     }
   },
+  head: [['link', { rel: 'icon', href: '/logo.svg' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local'
+    },
     nav: [
-      { text: 'Home', link: '/' },
+      { text: '首页', link: '/' },
       { text: '指南', link: '/guide/introduction' },
       { text: '组件', link: '/components/light/button/1' }
     ],
-
     sidebar: {
       '/guide/': [
         { text: '简介', link: '/guide/introduction' },

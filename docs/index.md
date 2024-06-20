@@ -3,16 +3,19 @@
 layout: home
 
 hero:
-  name: "fancy ui"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "Fancy UI"
+  text: "一个花里胡哨的组件库"
+  tagline: 为你的网站加点特效
+  image:
+    src: /logo.svg
+    alt: Fancy UI
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 指南
+      link: /guide/introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 组件列表
+      link: /components/light/button/1
 
 features:
   - title: Feature A
