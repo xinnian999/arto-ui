@@ -1,8 +1,14 @@
 {
   "name": "fancy-ui",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
+  "main": "./dist/fancy-ui.js",
+  "module": "./dist/fancy-ui.js",
+  "types": "./dist/fancy-ui.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -17,6 +23,7 @@
   },
   "dependencies": {
     "color": "^4.2.3",
+    "vite-plugin-dts": "^3.9.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {

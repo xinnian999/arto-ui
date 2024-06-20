@@ -1,8 +1,10 @@
 import components from './components'
 export * from './components'
 
-export default class {
+class Register {
   constructor() {
     Object.values(components).forEach((register) => new register())
   }
 }
+
+export default Register
