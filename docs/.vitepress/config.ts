@@ -26,7 +26,14 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         { text: '简介', link: '/guide/introduction' },
-        { text: '在Vue中使用', link: '/guide/use-vue' }
+        {
+          text: '使用教程',
+          collapsed: false,
+          items: [
+            { text: '在Vue中使用', link: '/guide/use-vue' },
+            { text: '在React中使用', link: '/guide/use-react' }
+          ]
+        }
       ],
       '/components/': [
         {

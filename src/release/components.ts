@@ -1,12 +1,12 @@
 import { defineCustomElement } from 'vue'
 import { toCamelCase } from '@/utils'
 
-const componentGlobs = import.meta.glob<any>('@/components/*.ce.vue', { eager: true })
+const componentGlobs = import.meta.glob<any>('@/components/*/*.ce.vue', { eager: true })
 
 const components: { [key: string]: { new (): void } } = Object.entries(componentGlobs).reduce(
   (acc, [k, v]) => {
-    const fileName = k.split('/')[3].split('.')[0]
-    console.log(fileName)
+    const fileName = v.default.__name.split('.')[0]
+
     const value = class {
       constructor() {
         customElements.define(fileName, defineCustomElement(v.default))

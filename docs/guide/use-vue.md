@@ -42,11 +42,22 @@ createApp(App).mount('#app')
 
 根据注册的组件名，驼峰转为小写分割
 
-<fa-light-button-1>按钮</fa-light-button-1>
+<script setup>
+import {ref} from 'vue';
+
+const count=ref(0)
+</script>
+
+<fa-light-button-1 @click="count++">点击 {{count}} 次</fa-light-button-1>
 
 ```vue
 <template>
-  <fa-light-button-1>按钮</fa-light-button-1>
+  <fa-light-button-1 @click="count++">点击 {{ count }} 次</fa-light-button-1>
 </template>
 
+<script setup>
+  import { ref } from 'vue'
+
+  const count = ref(0)
+</script>
 ```
