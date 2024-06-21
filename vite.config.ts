@@ -32,8 +32,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: fileURLToPath(new URL('./src/release/index.ts', import.meta.url)), //指定组件编译入口文件
-      name: 'arto-ui', // 包名
-      fileName: 'arto-ui' // 打包文件名
+      name: 'ArtoUI', // 包名
+      fileName: 'arto-ui', // 打包文件名
+      formats: ['umd', 'es', 'iife']
     }
     // rollupOptions: {
     //   // 确保外部化处理那些你不想打包进库的依赖

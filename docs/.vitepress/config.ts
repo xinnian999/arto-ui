@@ -31,7 +31,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '在Vue中使用', link: '/guide/use-vue' },
-            { text: '在React中使用', link: '/guide/use-react' }
+            { text: '在React中使用', link: '/guide/use-react' },
+            { text: '在html中使用', link: '/guide/use-html' }
           ]
         }
       ],
