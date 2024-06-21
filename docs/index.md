@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Arto UI"
-  text: "一个花里胡哨的组件库"
+  text: "一个花哨的前端组件库"
   tagline: 为你的网站加点特效
   image:
     src: /logo.svg

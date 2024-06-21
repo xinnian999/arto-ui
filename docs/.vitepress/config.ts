@@ -3,8 +3,8 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'arto ui',
-  description: 'A VitePress Site',
+  title: 'Arto UI',
+  description: '一个花哨的前端组件库',
   vite: {
     resolve: {
       alias: {
