@@ -1,7 +1,7 @@
 # Markdown Extension Examples
 
 This page demonstrates some of the built-in markdown extensions provided by VitePress.
-<fa-button-2>222</fa-button-2>
+<ar-button-2>222</ar-button-2>
 ## Syntax Highlighting
 
 VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:

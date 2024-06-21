@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'fancy ui',
+  title: 'arto ui',
   description: 'A VitePress Site',
   vite: {
     resolve: {

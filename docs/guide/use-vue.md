@@ -3,7 +3,7 @@
 ## 安装
 
 ```xml
-npm install fancy-ui
+npm install arto-ui
 ```
 
 ## 完整引入
@@ -14,9 +14,9 @@ npm install fancy-ui
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import FancyUI from 'fancy-ui'
+import ArtoUI from 'arto-ui'
 
-new FancyUI()
+new ArtoUI()
 
 createApp(App).mount('#app')
 ```
@@ -29,7 +29,7 @@ createApp(App).mount('#app')
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { FaLightButton1, FaLightButton1 } from 'fancy-ui'
+import { FaLightButton1, FaLightButton1 } from 'arto-ui'
 
 new FaLightButton1()
 
@@ -48,11 +48,11 @@ import {ref} from 'vue';
 const count=ref(0)
 </script>
 
-<fa-light-button-1 @click="count++">点击 {{count}} 次</fa-light-button-1>
+<ar-light-button-1 @click="count++">点击 {{count}} 次</ar-light-button-1>
 
 ```vue
 <template>
-  <fa-light-button-1 @click="count++">点击 {{ count }} 次</fa-light-button-1>
+  <ar-light-button-1 @click="count++">点击 {{ count }} 次</ar-light-button-1>
 </template>
 
 <script setup>

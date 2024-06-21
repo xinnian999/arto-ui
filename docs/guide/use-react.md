@@ -3,7 +3,7 @@
 ## 安装
 
 ```xml
-npm install fancy-ui
+npm install arto-ui
 ```
 
 ## 完整引入
@@ -15,9 +15,9 @@ npm install fancy-ui
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import FancyUI from  'fancy-ui'
+import ArtoUI from  'arto-ui'
 
-new FancyUI()
+new ArtoUI()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -35,7 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import { FaLightButton1, FaLightButton1 } from 'fancy-ui'
+import { FaLightButton1, FaLightButton1 } from 'arto-ui'
 
 new FaLightButton1()
 
@@ -58,7 +58,7 @@ import {ref} from 'vue';
 const count=ref(0)
 </script>
 
-<fa-light-button-1 @click="count++">点击 {{count}} 次</fa-light-button-1>
+<ar-light-button-1 @click="count++">点击 {{count}} 次</ar-light-button-1>
 
 ```tsx
 import { useState } from 'react'
@@ -67,7 +67,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <fa-light-button-1 onClick={()=>setCount(count+1)}>点击 {count} 次</fa-light-button-1>
+    <ar-light-button-1 onClick={()=>setCount(count+1)}>点击 {count} 次</ar-light-button-1>
   )
 }
 

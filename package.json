@@ -1,11 +1,11 @@
 {
-  "name": "fancy-ui",
+  "name": "arto-ui",
   "version": "1.0.0",
   "private": false,
   "type": "module",
-  "main": "./dist/fancy-ui.js",
-  "module": "./dist/fancy-ui.js",
-  "types": "./dist/fancy-ui.d.ts",
+  "main": "./dist/arto-ui.js",
+  "module": "./dist/arto-ui.js",
+  "types": "./dist/arto-ui.d.ts",
   "files": [
     "dist"
   ],
