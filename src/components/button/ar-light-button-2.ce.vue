@@ -9,9 +9,9 @@ import { getDarkerColor, getLighterColor } from '@/utils'
 defineOptions({ inheritAttrs: false })
 
 type Props = {
-  color: string
-  width: any
-  height: any
+  color?: string
+  width?: any
+  height?: any
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -40,11 +40,11 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   color: $primary-color;
-  transition: all 1s;
   font-size: 15px;
   position: relative;
   overflow: hidden;
   outline: 2px solid $primary-color;
+  transition: all 1s;
 }
 
 button:hover {

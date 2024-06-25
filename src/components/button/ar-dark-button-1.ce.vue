@@ -161,34 +161,33 @@ import { getDarkerColor, getLighterColor } from '@/utils'
 defineOptions({ inheritAttrs: false })
 
 type Props = {
-  color: string
-  width: any
-  height: any
+  color?: string
+  width?: any
+  height?: any
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: '#2c9caf',
+  color: '#fec195',
   width: 'auto',
   height: 'auto'
 })
 
 const { color, width, height } = toRefs(props)
-
-const outlineColor = computed(() => getLighterColor(color.value, 30))
-const boxShadowColor = computed(() => getDarkerColor(color.value, 30))
 </script>
 
 <style scoped lang="scss">
 $primary-color: v-bind(color);
 
 button {
+  width: v-bind(width);
+  height: v-bind(height);
   position: relative;
   padding: 12px 35px;
-  background: #fec195;
+  background: $primary-color;
   font-size: 17px;
   font-weight: 500;
   color: #181818;
-  border: 3px solid #fec195;
+  border: 3px solid $primary-color;
   border-radius: 8px;
   box-shadow: 0 0 0 #fec1958c;
   transition: all 0.3s ease-in-out;
@@ -263,7 +262,7 @@ button {
 
 button:hover {
   background: transparent;
-  color: #fec195;
+  color: $primary-color;
   box-shadow: 0 0 25px #fec1958c;
 }
 

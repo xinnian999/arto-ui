@@ -9,9 +9,9 @@ import { getDarkerColor } from '@/utils'
 defineOptions({ inheritAttrs: false })
 
 type Props = {
-  color: string
-  width: any
-  height: any
+  color?: string
+  width?: any
+  height?: any
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -36,7 +36,7 @@ button {
   background-color: #ffffff;
   box-shadow: #0000000d 0 0 8px;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   font-size: 15px;
   transition: all 0.5s ease;
 }

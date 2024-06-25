@@ -10,9 +10,9 @@ import { toRefs } from 'vue'
 defineOptions({ inheritAttrs: false })
 
 type Props = {
-  color: string
-  width: any
-  height: any
+  color?: string
+  width?: any
+  height?: any
 }
 
 const props = withDefaults(defineProps<Props>(), {

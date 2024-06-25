@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
+import menus from './menus'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Arto UI',
   description: '一个花哨的前端组件库',
@@ -9,6 +9,14 @@ export default defineConfig({
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('../../src/', import.meta.url))
+      }
+    }
+  },
+  vue: {
+    template: {
+      compilerOptions: {
+        // 将所有带短横线的标签名都视为自定义元素
+        isCustomElement: (tag) => tag.includes('ar-')
       }
     }
   },
@@ -23,49 +31,7 @@ export default defineConfig({
       { text: '指南', link: '/guide/introduction' },
       { text: '组件', link: '/components/light/button/1' }
     ],
-    sidebar: {
-      '/guide/': [
-        { text: '简介', link: '/guide/introduction' },
-        {
-          text: '使用教程',
-          collapsed: false,
-          items: [
-            { text: '在Vue中使用', link: '/guide/use-vue' },
-            { text: '在React中使用', link: '/guide/use-react' },
-            { text: '在html中使用', link: '/guide/use-html' }
-          ]
-        }
-      ],
-      '/components/': [
-        {
-          text: '浅色组件',
-
-          items: [
-            {
-              text: '按钮',
-              collapsed: true,
-              items: [
-                { text: '按钮1', link: '/components/light/button/1' },
-                { text: '按钮2', link: '/components/light/button/2' }
-              ]
-            }
-          ]
-        },
-        {
-          text: '深色组件',
-          items: [
-            {
-              text: '按钮',
-              collapsed: true,
-              items: [
-                { text: '按钮1', link: '/components/dark/button/1' },
-                { text: '按钮2', link: '/components/dark/button/2' }
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    sidebar: menus,
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
   }
