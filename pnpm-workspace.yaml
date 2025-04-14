@@ -1,0 +1,4 @@
+packages:
+  - "arto-ui"
+  - "docs"
+  - "play/*"

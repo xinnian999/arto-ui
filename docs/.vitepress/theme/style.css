@@ -1,6 +1,6 @@
 .lightBox{
     padding: 100px 30px;
-    background-color:#e8e8e8;
+    background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,7 +8,7 @@
 
 .darkBox{
     padding: 100px 30px;
-    background-color:#333333;
+    background-color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
