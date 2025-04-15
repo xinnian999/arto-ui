@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "dist/arto-ui.js",
   "scripts": {
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "build": "pnpm build:full && pnpm build:external",
+    "build:full": "vite build --mode full",
+    "build:external": "vite build"
   },
   "files": [
     "dist"
@@ -26,5 +24,18 @@
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2",
     "vue-tsc": "^2.2.8"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/full/arto-ui.full.es.js",
+      "require": "./dist/full/arto-ui.full.js"
+    },
+    "./external": {
+      "import": "./dist/external/arto-ui.es.js",
+      "require": "./dist/external/arto-ui.umd.js"
+    },
+    "./dev": {
+      "import": "./index.ts"
+    }
   }
 }

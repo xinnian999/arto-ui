@@ -4,8 +4,6 @@
 
 <style lang="scss">
 .ar-button {
-  /* color: #fff; */
-
-//   --hover-text: "立即进入1111111";
+  // --text-color: #fff;
 }
 </style>
