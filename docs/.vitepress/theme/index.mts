@@ -6,7 +6,7 @@ export default {
   extends: DefaultTheme,
   async enhanceApp({ app }) {
     if (!import.meta.env.SSR) {
-      const { default: ArtoUI } = await import('arto-ui/external')
+      const { default: ArtoUI } = await import('arto-ui/dev')
       new ArtoUI()
     }
   }

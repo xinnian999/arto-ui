@@ -161,7 +161,6 @@ button {
   background: var(--bg-color, #fec195);
   font-size: var(--font-size, 17px);
   font-weight: 500;
-  color: var(--text-color, #181818);
   border: 3px solid var(--border-color, #fec195);
   border-radius: var(--border-radius, 8px);
   box-shadow: 0 0 0 var(--box-shadow-color, #fec195);
@@ -169,6 +168,7 @@ button {
   cursor: pointer;
   width: var(--width, auto);
   height: var(--height, auto);
+  color: var(--text-color, #181818);
 }
 
 .star-1 {
@@ -239,8 +239,8 @@ button {
 
 button:hover {
   background: transparent;
-  color: #fec195;
-  box-shadow: 0 0 25px #fec1958c;
+  color: var(--hover-text-color, #fec195);
+  box-shadow: 0 0 25px var(--hover-box-shadow-color, #fec195);
 }
 
 button:hover .star-1 {
