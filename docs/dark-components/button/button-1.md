@@ -38,7 +38,10 @@
 ```html
 <style>
   .demo2 {
-    --text-color: #fff;
+    --bg-color:rgb(79, 200, 204);
+    --border-color:rgb(79, 200, 204);
+    --hover-box-shadow-color:rgb(79, 200, 204);
+    --hover-text-color:rgb(79, 200, 204);
   }
 </style>
 
