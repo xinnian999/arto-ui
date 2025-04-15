@@ -1,5 +1,5 @@
 <template>
-  <ar-button-2 class="ar-button">哈哈哈</ar-button-2>
+  <ar-button-1 class="ar-button">哈哈哈</ar-button-1>
 </template>
 
 <style lang="scss">

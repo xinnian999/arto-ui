@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import ArtoUI from 'arto-ui/src/index.ts'
+import ArtoUI from 'arto-ui'
 
 new ArtoUI()
 

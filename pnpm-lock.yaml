@@ -8,15 +8,27 @@ importers:
 
   .:
     dependencies:
+      '@arto-ui/components':
+        specifier: workspace:*
+        version: link:packages/components
       arto-ui:
         specifier: workspace:*
-        version: link:arto-ui
+        version: link:packages/arto-ui
+      vue:
+        specifier: ^3.5.13
+        version: 3.5.13(typescript@5.8.3)
     devDependencies:
       sass-embedded:
         specifier: ^1.86.3
         version: 1.86.3
 
-  arto-ui:
+  docs:
+    devDependencies:
+      vitepress:
+        specifier: ^1.6.3
+        version: 1.6.3(@algolia/client-search@5.23.3)(@types/node@22.14.1)(postcss@8.5.3)(sass-embedded@1.86.3)(search-insights@2.17.3)(typescript@5.8.3)
+
+  packages/arto-ui:
     dependencies:
       vue:
         specifier: ^3.5.13
@@ -50,11 +62,7 @@ importers:
         specifier: ^2.2.8
         version: 2.2.8(typescript@5.8.3)
 
-  docs:
-    devDependencies:
-      vitepress:
-        specifier: ^1.6.3
-        version: 1.6.3(@algolia/client-search@5.23.3)(@types/node@22.14.1)(postcss@8.5.3)(sass-embedded@1.86.3)(search-insights@2.17.3)(typescript@5.8.3)
+  packages/components: {}
 
   play/react:
     dependencies:

@@ -4,14 +4,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm -C play/vue dev",
-    "build": "pnpm -C arto-ui build",
+    "build": "pnpm -C packages/arto-ui build",
     "dev:docs": "pnpm -C docs dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "arto-ui": "workspace:*"
+    "arto-ui": "workspace:*",
+    "@arto-ui/components": "workspace:*",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "sass-embedded": "^1.86.3"

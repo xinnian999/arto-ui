@@ -7,7 +7,7 @@ const toCamelCase = (str: string) => {
     .join(""); // 将数组重新合并成字符串
 };
 
-const componentGlobs = import.meta.glob<any>("./components/*/*.ce.vue", {
+const componentGlobs = import.meta.glob<any>("./*/*.ce.vue", {
   eager: true,
 });
 
