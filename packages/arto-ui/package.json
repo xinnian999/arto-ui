@@ -4,9 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm build:full && pnpm build:external",
-    "build:full": "vite build --mode full",
-    "build:external": "vite build"
+    "build": "vite build"
   },
   "files": [
     "dist"
@@ -27,12 +25,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/full/arto-ui.full.es.js",
-      "require": "./dist/full/arto-ui.full.js"
-    },
-    "./external": {
-      "import": "./dist/external/arto-ui.es.js",
-      "require": "./dist/external/arto-ui.umd.js"
+      "import": "./dist/arto-ui.js",
+      "require": "./dist/arto-ui.umd.cjs"
     },
     "./dev": {
       "import": "./index.ts"
