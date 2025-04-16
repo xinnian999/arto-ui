@@ -314,8 +314,8 @@ export const meta = {
   theme: "dark",
   slot: "Button",
   variables: [
-    { name: "--width", description: "按钮宽度", default: "auto" },
-    { name: "--height", description: "按钮高度", default: "auto" },
+    { name: "--width", description: "宽度", default: "auto" },
+    { name: "--height", description: "高度", default: "auto" },
   ],
 };
 </script>

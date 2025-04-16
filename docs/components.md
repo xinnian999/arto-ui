@@ -6,6 +6,12 @@ sidebar: false
 
 <ClientOnly>
 
+<!-- <style>
+    .VPPage{
+        height:100%
+    }
+</style> -->
+
 <components/>
 
 <script setup>
