@@ -1,180 +1,321 @@
+<style scoped>
+button {
+  position: relative;
+  padding: 12px 35px;
+  background: #fec195;
+  font-size: 17px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #fec195;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  width: var(--width, auto);
+  height: var(--height, auto);
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+button:hover {
+  background: transparent;
+  color: #fec195;
+  box-shadow: 0 0 25px #fec1958c;
+}
+
+button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+</style>
+
 <template>
-  <button class="frutiger-button">
-    <div class="inner">
-      <div class="top-white"></div>
-      <span class="text"><slot>Frutiger Button</slot></span>
+  <button>
+    <slot>Button</slot>
+    <div class="star-1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        version="1.1"
+        style="
+          shape-rendering: geometricPrecision;
+          text-rendering: geometricPrecision;
+          image-rendering: optimizeQuality;
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+        "
+        viewBox="0 0 784.11 815.53"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs></defs>
+        <g id="Layer_x0020_1">
+          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+          <path
+            class="fil0"
+            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="star-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        version="1.1"
+        style="
+          shape-rendering: geometricPrecision;
+          text-rendering: geometricPrecision;
+          image-rendering: optimizeQuality;
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+        "
+        viewBox="0 0 784.11 815.53"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs></defs>
+        <g id="Layer_x0020_1">
+          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+          <path
+            class="fil0"
+            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="star-3">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        version="1.1"
+        style="
+          shape-rendering: geometricPrecision;
+          text-rendering: geometricPrecision;
+          image-rendering: optimizeQuality;
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+        "
+        viewBox="0 0 784.11 815.53"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs></defs>
+        <g id="Layer_x0020_1">
+          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+          <path
+            class="fil0"
+            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="star-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        version="1.1"
+        style="
+          shape-rendering: geometricPrecision;
+          text-rendering: geometricPrecision;
+          image-rendering: optimizeQuality;
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+        "
+        viewBox="0 0 784.11 815.53"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs></defs>
+        <g id="Layer_x0020_1">
+          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+          <path
+            class="fil0"
+            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="star-5">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        version="1.1"
+        style="
+          shape-rendering: geometricPrecision;
+          text-rendering: geometricPrecision;
+          image-rendering: optimizeQuality;
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+        "
+        viewBox="0 0 784.11 815.53"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs></defs>
+        <g id="Layer_x0020_1">
+          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+          <path
+            class="fil0"
+            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <div class="star-6">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        version="1.1"
+        style="
+          shape-rendering: geometricPrecision;
+          text-rendering: geometricPrecision;
+          image-rendering: optimizeQuality;
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+        "
+        viewBox="0 0 784.11 815.53"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs></defs>
+        <g id="Layer_x0020_1">
+          <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+          <path
+            class="fil0"
+            d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+          ></path>
+        </g>
+      </svg>
     </div>
   </button>
 </template>
 
 <script>
-export default {
-  name: "ar-button-1",
-};
-
-// 文档绑定
-// 你在打包 Web Components 时，读取这个属性就能生成文档
 export const meta = {
-  name: "ar-button-1",
   type: "button",
   theme: "dark",
-  slot: "Frutiger Button",
+  slot: "Button",
   variables: [
-    { name: "--padding", description: "按钮整体内边距", default: "2px" },
-    { name: "--border-radius", description: "按钮圆角大小", default: "6px" },
     { name: "--width", description: "按钮宽度", default: "auto" },
     { name: "--height", description: "按钮高度", default: "auto" },
-    {
-      name: "--text-shadow",
-      description: "文字阴影",
-      default: "1px 1px #000a",
-    },
-    {
-      name: "--bg",
-      description: "按钮背景渐变",
-      default: "linear-gradient(#006caa, #00c3ff)",
-    },
-    {
-      name: "--shadow",
-      description: "默认阴影",
-      default: "0px 4px 6px 0px #0008",
-    },
-    {
-      name: "--hover-shadow",
-      description: "悬浮时阴影",
-      default: "0px 6px 12px 0px #0009",
-    },
-    {
-      name: "--active-shadow",
-      description: "按下时阴影",
-      default: "0px 0px 0px 0px #0000",
-    },
-    { name: "--inner-padding", description: "内部容器内边距", default: "1em" },
-    { name: "--inner-radius", description: "内部容器圆角", default: "4px" },
-    {
-      name: "--inner-bg",
-      description: "内部容器背景",
-      default:
-        "radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%), linear-gradient(#00526a, #009dcd)",
-    },
-    {
-      name: "--shine-gradient",
-      description: "高光动画渐变",
-      default: "linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%)",
-    },
-    {
-      name: "--highlight-bg",
-      description: "顶部白色高光背景",
-      default:
-        "radial-gradient(circle at 50% -270%, #fff 45%, #fff6 60%, #fff0 60%)",
-    },
-    {
-      name: "--inner-shadow",
-      description: "内部 inset 阴影",
-      default: "inset 0px 2px 8px -2px #0000",
-    },
-    {
-      name: "--inner-shadow-active",
-      description: "按下时的 inset 阴影",
-      default: "inset 0px 2px 8px -2px #000a",
-    },
-    { name: "--text-color", description: "文字颜色", default: "white" },
-    { name: "--font-weight", description: "文字粗细", default: "550" },
-    { name: "--transition", description: "过渡动画效果", default: "0.3s all" },
   ],
 };
 </script>
-
-<style scoped>
-.frutiger-button {
-  cursor: pointer;
-  position: relative;
-  padding: var(--padding, 2px);
-  border-radius: var(--border-radius, 6px);
-  border: 0;
-  text-shadow: var(--text-shadow, 1px 1px #000a);
-  background: var(--bg, linear-gradient(#006caa, #00c3ff));
-  box-shadow: var(--shadow, 0px 4px 6px 0px #0008);
-  transition: var(--transition, 0.3s all);
-  width: var(--width, auto);
-  height: var(--height, auto);
-}
-
-.frutiger-button:hover {
-  box-shadow: var(--hover-shadow, 0px 6px 12px 0px #0009);
-}
-
-.frutiger-button:active {
-  box-shadow: var(--active-shadow, 0px 0px 0px 0px #0000);
-}
-
-.inner {
-  position: relative;
-  inset: 0px;
-  padding: var(--inner-padding, 1em);
-  border-radius: var(--inner-radius, 4px);
-  background: var(
-    --inner-bg,
-    radial-gradient(circle at 50% 100%, #30f8f8 10%, #30f8f800 55%),
-    linear-gradient(#00526a, #009dcd)
-  );
-  overflow: hidden;
-  transition: inherit;
-}
-
-.inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(
-    --shine-gradient,
-    linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%)
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: thing 3s ease infinite;
-}
-
-@keyframes thing {
-  0% {
-    background-position: 130%;
-    opacity: 1;
-  }
-  to {
-    background-position: -166%;
-    opacity: 0;
-  }
-}
-
-.top-white {
-  position: absolute;
-  border-radius: inherit;
-  inset: 0 -8em;
-  background: var(
-    --highlight-bg,
-    radial-gradient(circle at 50% -270%, #fff 45%, #fff6 60%, #fff0 60%)
-  );
-  transition: inherit;
-}
-
-.inner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  transition: inherit;
-  box-shadow: var(--inner-shadow, inset 0px 2px 8px -2px #0000);
-}
-
-.frutiger-button:active .inner::after {
-  box-shadow: var(--inner-shadow-active, inset 0px 2px 8px -2px #000a);
-}
-
-.text {
-  position: relative;
-  z-index: 1;
-  color: var(--text-color, white);
-  font-weight: var(--font-weight, 550);
-  transition: inherit;
-}
-</style>

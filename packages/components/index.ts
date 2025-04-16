@@ -1,5 +1,9 @@
 import { defineCustomElement } from "vue";
 
+const splitNamespace = (name: string) => {
+  return "ar-" + name.split("/").pop()?.split(".")[0];
+};
+
 const toCamelCase = (str: string) => {
   return str
     .split("-") // 将字符串按 '-' 分割成数组
@@ -19,7 +23,7 @@ const componentGlobs: {
 const components: { [key: string]: { new (): void } } = Object.entries(
   componentGlobs
 ).reduce((acc, [k, v]) => {
-  const componentName = "ar-" + k.split("/").pop()?.split(".")[0];
+  const componentName = splitNamespace(k);
 
   return {
     ...acc,
@@ -31,9 +35,9 @@ const components: { [key: string]: { new (): void } } = Object.entries(
   };
 }, {});
 
-export const metas = Object.values(componentGlobs)
-  .map((v) => {
-    return v.meta;
+export const metas = Object.entries(componentGlobs)
+  .map(([k, v]) => {
+    return { ...v.meta, name: splitNamespace(k) };
   })
   .filter((v) => v);
 
