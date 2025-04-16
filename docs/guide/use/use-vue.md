@@ -8,8 +8,6 @@ npm install arto-ui
 
 ## 完整引入
 
-这将会引入所有组件，后续就无需再关注导入问题，很方便，但打包体积会稍微变大
-
 ```ts
 //main.ts
 import { createApp } from 'vue'
@@ -29,11 +27,11 @@ createApp(App).mount('#app')
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { FaLightButton1, FaLightButton1 } from 'arto-ui'
+import { ArButton1, ArButton2 } from 'arto-ui'
 
-new FaLightButton1()
+new ArButton1()
 
-new FaLightButton1()
+new ArButton2()
 
 createApp(App).mount('#app')
 ```
@@ -45,14 +43,14 @@ createApp(App).mount('#app')
 <script setup>
 import {ref} from 'vue';
 
-const count=ref(0)
+const count = ref(0)
 </script>
 
-<ar-light-button-1 @click="count++">点击 {{count}} 次</ar-light-button-1>
+<ar-button-1 @click="count++">点击 {{count}} 次</ar-button-1>
 
 ```vue
 <template>
-  <ar-light-button-1 @click="count++">点击 {{ count }} 次</ar-light-button-1>
+  <ar-button-1 @click="count++">点击 {{ count }} 次</ar-button-1>
 </template>
 
 <script setup>
