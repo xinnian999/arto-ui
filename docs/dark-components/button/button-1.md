@@ -5,7 +5,7 @@
 ## Demo1
 
 <div class="darkBox">
-  <ar-button-1>按钮</ar-button-1>
+  <ar-button-1></ar-button-1>
 </div>
 
 ::: details 查看代码
@@ -30,7 +30,7 @@
 </style>
 
 <div class="darkBox">
-  <ar-button-1 class="demo2">按钮</ar-button-1>
+  <ar-button-2 class="demo2"></ar-button-2>
 </div>
 
 ::: details 查看代码
@@ -64,8 +64,8 @@
   }
 </style>
 
-<div class="darkBox">
-  <ar-button-1 class="demo3">按钮</ar-button-1>
+<div class="lightBox">
+  <ar-button-3 class="demo3">按钮</ar-button-3>
 </div>
 
 ::: details 查看代码

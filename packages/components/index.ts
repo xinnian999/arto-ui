@@ -7,24 +7,36 @@ const toCamelCase = (str: string) => {
     .join(""); // 将数组重新合并成字符串
 };
 
-const componentGlobs = import.meta.glob<any>("./*/*.ce.vue", {
+const componentGlobs: {
+  [path: string]: {
+    default: any;
+    meta: any;
+  };
+} = import.meta.glob<any>("./*/*.ce.vue", {
   eager: true,
 });
 
 const components: { [key: string]: { new (): void } } = Object.entries(
   componentGlobs
 ).reduce((acc, [k, v]) => {
-  const fileName = "ar-" + k.split("/").pop()?.split(".")[0];
+  const componentName = "ar-" + k.split("/").pop()?.split(".")[0];
 
-  const value = class {
-    constructor() {
-      customElements.define(fileName, defineCustomElement(v.default));
-    }
+  return {
+    ...acc,
+    [toCamelCase(componentName)]: class {
+      constructor() {
+        customElements.define(componentName, defineCustomElement(v.default));
+      }
+    },
   };
-
-  return { ...acc, [toCamelCase(fileName)]: value };
 }, {});
 
-export default components;
+export const metas = Object.values(componentGlobs)
+  .map((v) => {
+    return v.meta;
+  })
+  .filter((v) => v);
 
-export const { FaLightButton1, FaLightButton2 } = components;
+export const { ArButton1, ArButton2 } = components;
+
+export default components;
