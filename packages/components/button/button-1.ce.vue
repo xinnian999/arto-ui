@@ -157,18 +157,18 @@
 <style scoped lang="scss">
 button {
   position: relative;
-  padding: var(--padding, 12px 35px);
-  background: var(--bg-color, #fec195);
-  font-size: var(--font-size, 17px);
+  padding: 12px 35px;
+  background: var(--color, #fec195);
+  font-size: 17px;
   font-weight: 500;
-  border: 3px solid var(--border-color, #fec195);
-  border-radius: var(--border-radius, 8px);
-  box-shadow: 0 0 0 var(--box-shadow-color, #fec195);
+  border: 3px solid var(--color, #fec195);
+  border-radius: 8px;
+  box-shadow: 0 0 0 var(--color, #fec195);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   width: var(--width, auto);
   height: var(--height, auto);
-  color: var(--text-color, #181818);
+  color: #181818;
 }
 
 .star-1 {
@@ -239,8 +239,8 @@ button {
 
 button:hover {
   background: transparent;
-  color: var(--hover-text-color, #fec195);
-  box-shadow: 0 0 25px var(--hover-box-shadow-color, #fec195);
+  color: var(--color, #fec195);
+  box-shadow: 0 0 25px var(--color, #fec195);
 }
 
 button:hover .star-1 {

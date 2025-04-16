@@ -22,23 +22,23 @@ export default {
   "/light-components/": [
     {
       text: "按钮",
-      items: [{ text: "按钮2", link: "/light-components/button/button-2" }],
+      items: [
+        { text: "按钮2", link: "/light-components/button/button-2" },
+        { text: "闪烁按钮", link: "/light-components/button/button-4" },
+      ],
     },
   ],
   "/dark-components/": [
     {
       text: "按钮",
       items: [
-        { text: "按钮1", link: "/dark-components/button/button-1" },
-        { text: "按钮3", link: "/dark-components/button/button-3" },
-        { text: "按钮5", link: "/dark-components/button/button-5" },
+        { text: "星星按钮", link: "/dark-components/button/button-1" },
+        { text: "霓虹灯按钮", link: "/dark-components/button/button-3" },
       ],
     },
     {
       text: "开关",
-      items: [
-        { text: "开关1", link: "/dark-components/switch/switch-1" },
-      ],
+      items: [{ text: "开关1", link: "/dark-components/switch/switch-1" }],
     },
   ],
 };

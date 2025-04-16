@@ -1,6 +1,6 @@
 <template>
   <button class="button">
-    Apply Now
+    <slot />
     <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
       <path
         clip-rule="evenodd"
@@ -18,7 +18,7 @@
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   padding-block: 0.5rem;
   padding-inline: 1.25rem;
-  background-color: rgb(0 107 179);
+  background-color: var(--color, rgb(0 107 179));
   border-radius: 9999px;
   display: flex;
   align-items: center;
@@ -31,6 +31,8 @@
   outline: none;
   overflow: hidden;
   font-size: 15px;
+  width: var(--width, auto);
+  height: var(--height, auto);
 }
 
 .icon {

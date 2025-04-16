@@ -8,13 +8,13 @@
 .codepen-button {
   display: block;
   cursor: pointer;
-  color: var(--text-color, #fff);
+  color: #fff;
   position: relative;
   text-decoration: none;
   font-weight: 600;
-  border-radius: var(--border-radius, 6px);
+  border-radius: 6px;
   overflow: hidden;
-  padding: var(--border-width, 3px);;
+  padding: var(--border-width, 3px);
   isolation: isolate;
   border: none;
 }
@@ -56,9 +56,9 @@
 
 .codepen-button .content {
   position: relative;
-  padding: var(--padding, 10px 15px);
-  font-size: var(--font-size, 16px);
-  background: var(--bg-color, #000);
+  padding: 10px 15px;
+  font-size: 16px;
+  background: #000;
   border-radius: 3px;
   width: var(--width, 80px);
   height: var(--height, auto);

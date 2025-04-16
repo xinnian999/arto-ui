@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import menus from "./menus";
+import sidebar from "./sidebar";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
       { text: "浅色组件", link: "/light-components/button/button-2" },
       { text: "深色组件", link: "/dark-components/button/button-1" },
     ],
-    sidebar: menus,
+    sidebar,
 
     socialLinks: [
       { icon: "github", link: "https://github.com/vuejs/vitepress" },

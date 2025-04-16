@@ -1,4 +1,4 @@
-# 按钮 1
+# 星星按钮 1
 
 星星特效按钮，鼠标移入按钮会有星星飞出哦！
 
@@ -22,10 +22,7 @@
 
 <style>
   .demo2 {
-    --bg-color:rgb(79, 200, 204);
-    --border-color:rgb(79, 200, 204);
-    --hover-box-shadow-color:rgb(79, 200, 204);
-    --hover-text-color:rgb(79, 200, 204);
+    --color:rgb(79, 200, 204);
   }
 </style>
 
@@ -38,10 +35,7 @@
 ```html
 <style>
   .demo2 {
-    --bg-color:rgb(79, 200, 204);
-    --border-color:rgb(79, 200, 204);
-    --hover-box-shadow-color:rgb(79, 200, 204);
-    --hover-text-color:rgb(79, 200, 204);
+    --color: rgb(79, 200, 204);
   }
 </style>
 
@@ -57,10 +51,7 @@
 <style>
   .demo3{
     --width:300px;
-    --bg-color:rgb(50, 233, 120);
-    --border-color:rgb(50, 233, 120);
-    --hover-box-shadow-color:rgb(50, 233, 120);
-    --hover-text-color:rgb(50, 233, 120);
+    --color:rgb(50, 233, 120);
   }
 </style>
 
@@ -73,10 +64,8 @@
 ```html
 <style>
   .demo3 {
-    --width:300px;
-    --bg-color:rgb(50, 233, 120);
-    --border-color:rgb(50, 233, 120);
-    --hover-box-shadow-color:rgb(50, 233, 120);
+    --width: 300px;
+    --color: rgb(50, 233, 120);
   }
 </style>
 
@@ -89,15 +78,8 @@
 
 ## CSS 变量
 
-| 属性名                   | 说明             | 默认值      |
-| ------------------------ | ---------------- | ----------- |
-| --width                  | 宽               | `auto`      |
-| --height                 | 高               | `auto`      |
-| --text-color             | 文本颜色         | `#181818`   |
-| --bg-color               | 背景颜色         | `#fec195`   |
-| --border-color           | 边框色           | `#fec195`   |
-| --border-radius          | 圆角             | `8px`       |
-| --padding                | 内间距           | `12px 35px` |
-| --font-size              | 文本大小         | `17px`      |
-| --hover-text-color       | hover 时文本颜色 | `#fec195`   |
-| --hover-box-shadow-color | hover 时阴影颜色 | `#fec195`   |
+| 属性名   | 说明   | 默认值    |
+| -------- | ------ | --------- |
+| --width  | 宽     | `auto`    |
+| --height | 高     | `auto`    |
+| --color  | 主题色 | `#fec195` |
