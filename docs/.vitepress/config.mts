@@ -14,8 +14,6 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "指南", link: "/guide/introduction" },
       { text: "组件", link: "/components" },
-      { text: "浅色组件", link: "/light-components/button/button-2" },
-      { text: "深色组件", link: "/dark-components/button/button-1" },
     ],
     sidebar: menus,
 

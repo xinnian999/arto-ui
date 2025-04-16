@@ -5,6 +5,16 @@
         <div :class="`${meta.theme}Box`">
           <component :is="meta.name" />
         </div>
+
+        <div class="footer">
+          <div class="name">{{ meta.name }}</div>
+
+          <div class="actions">
+            <el-button> 查看CSS变量 </el-button>
+
+            <el-button type="primary" @click="copyCode(meta)"> 复制 </el-button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -12,6 +22,19 @@
 
 <script setup lang="ts">
 import { metas } from "arto-ui/dev";
+import { ElMessage } from "element-plus";
+
+const copyCode = async (meta: any) => {
+  const textArea = document.createElement("textarea");
+  textArea.value = `
+  <${meta.name}>${meta.slot}</${meta.name}>
+  `;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+  ElMessage.success("复制成功");
+};
 </script>
 
 <style lang="scss">
@@ -33,6 +56,8 @@ import { metas } from "arto-ui/dev";
 
 .components-container {
   padding: 20px;
+  background-color: #eee;
+  height: 100%;
 }
 .components-list {
   display: grid;
@@ -41,5 +66,21 @@ import { metas } from "arto-ui/dev";
 }
 .component-item {
   flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    .name {
+      font-weight: bold;
+    }
+    .actions {
+      display: flex;
+    }
+  }
 }
 </style>
