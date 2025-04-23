@@ -8,19 +8,19 @@ button {
   vertical-align: middle;
   text-decoration: none;
   font-family: inherit;
-  font-size: 15px;
+  font-size: var(--font-size, 15px);
   width: var(--width, auto);
   height: var(--height, auto);
 }
 
 button.learn-more {
   font-weight: 600;
-  color: #382b22;
+  color: var(--text-color, #382b22);
   text-transform: uppercase;
-  padding: 1.25em 2em;
-  background: #fff0f0;
+  padding: var(--padding, 1.25em 2em);
+  background: var(--color, #fff0f0);
   border: 2px solid #b18597;
-  border-radius: 0.75em;
+  border-radius: var(--border-radius, 0.75em);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1),
@@ -92,6 +92,10 @@ export const meta = {
   variables: [
     { name: "--width", description: "按钮宽度", default: "auto" },
     { name: "--height", description: "按钮高度", default: "auto" },
+    { name: "--font-size", description: "字体大小", default: "15px" },
+    { name: "--text-color", description: "文字颜色", default: "#382b22" },
+    { name: "--padding", description: "内边距", default: "1.25em 2em" },
+    { name: "--border-radius", description: "圆角", default: "0.75em" },
   ],
 };
 </script>

@@ -1,13 +1,13 @@
 <style scoped>
 button {
   position: relative;
-  padding: 12px 35px;
+  padding: var(--padding, 12px 35px);
   background: var(--color, #fec195);
-  font-size: 17px;
+  font-size: var(--font-size, 17px);
   font-weight: 500;
-  color: #181818;
+  color: var(--text-color, #181818);
   border: 3px solid var(--color, #fec195);
-  border-radius: 8px;
+  border-radius: var(--border-radius, 8px);
   box-shadow: 0 0 0 var(--color, #fec1958c);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -145,6 +145,10 @@ button:hover .star-6 {
   height: auto;
   filter: drop-shadow(0 0 10px #fffdef);
   z-index: 2;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 .fil0 {
@@ -317,6 +321,10 @@ export const meta = {
     { name: "--width", description: "宽度", default: "auto" },
     { name: "--height", description: "高度", default: "auto" },
     { name: "--color", description: "主题色", default: "#fec195" },
+    { name: "--padding", description: "内边距", default: "12px 35px" },
+    { name: "--font-size", description: "字体大小", default: "17px" },
+    { name: "--border-radius", description: "圆角", default: "8px" },
+    { name: "--text-color", description: "文字颜色", default: "#181818" },
   ],
 };
 </script>

@@ -1,9 +1,11 @@
 <template>
-  <ar-button-1 class="ar-button">哈哈哈</ar-button-1>
+  <ar-switch-1 class="ar-switch"></ar-switch-1>
 </template>
 
 <style lang="scss">
-.ar-button {
-  // --text-color: #fff;
+.ar-switch {
+  // --color: #e1d7b3;
+  --width: 300px;
+  --height: 100px;
 }
 </style>

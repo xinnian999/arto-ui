@@ -1,18 +1,20 @@
 <style scoped>
 button {
-  --border-radius: 15px;
   --border-width: 4px;
   appearance: none;
   position: relative;
-  padding: 1em 2em;
+  padding: var(--padding, 1em 2em);
   border: 0;
   background-color: #212121;
   font-family: "Roboto", Arial, "Segoe UI", sans-serif;
-  font-size: 18px;
+  font-size: var(--font-size, 18px);
   font-weight: 500;
-  color: #fff;
+  color: var(--color, #fff);
   z-index: 2;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius, 15px);
+  cursor: pointer;
+  width: var(--width, auto);
+  height: var(--height, auto);
 }
 
 button::after {
@@ -25,7 +27,7 @@ button::after {
   width: 100%;
   height: 100%;
   padding: var(--border-width);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius, 15px);
   background-image: conic-gradient(
     #488cfb,
     #29dbbc,
@@ -79,6 +81,10 @@ export const meta = {
   variables: [
     { name: "--width", description: "按钮宽度", default: "auto" },
     { name: "--height", description: "按钮高度", default: "auto" },
+    { name: "--padding", description: "按钮内边距", default: "1em 2em" },
+    { name: "--font-size", description: "按钮字体大小", default: "18px" },
+    { name: "--color", description: "按钮文字颜色", default: "#fff" },
+    { name: "--border-radius", description: "按钮圆角", default: "15px" },
   ],
 };
 </script>

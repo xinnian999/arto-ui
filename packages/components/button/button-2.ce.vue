@@ -4,22 +4,26 @@
 }
 
 .voltage-button button {
-  color: white;
-  background: #0d1127;
-  padding: 1rem 3rem 1rem 3rem;
-  border-radius: 5rem;
-  border: 5px solid #5978f3;
-  font-size: 1.2rem;
+  color: var(--color, white);
+  background: var(--background, #0d1127);
+  padding: var(--padding, 1rem 3rem);
+  border-radius: var(--border-radius, 5rem);
+  border: 5px solid var(--border-color, #5978f3);
+  font-size: var(--font-size, 1.2rem);
   line-height: 1em;
-  letter-spacing: 0.075em;
+  letter-spacing: var(--letter-spacing, 0.075em);
   transition: background 0.3s;
   width: var(--width, auto);
   height: var(--height, auto);
 }
 
+.voltage-button button:active {
+  transform: scale(0.99);
+}
+
 .voltage-button button:hover {
   cursor: pointer;
-  background: #0f1c53;
+  background: var(--background-hover, #0f1c53);
 }
 
 .voltage-button button:hover + svg,
@@ -46,15 +50,15 @@
 }
 
 .voltage-button svg path.line-1 {
-  stroke: #f6de8d;
+  stroke: var(--line-1-color, #f6de8d);
   stroke-dashoffset: 0;
-  animation: spark-1 3s linear infinite;
+  animation: spark-1 var(--line-duration, 3s) linear infinite;
 }
 
 .voltage-button svg path.line-2 {
-  stroke: #6bfeff;
+  stroke: var(--line-2-color, #6bfeff);
   stroke-dashoffset: 500;
-  animation: spark-2 3s linear infinite;
+  animation: spark-2 var(--line-duration, 3s) linear infinite;
 }
 
 .voltage-button .dots {
@@ -226,8 +230,23 @@ export const meta = {
   theme: "dark",
   slot: "Button",
   variables: [
-    { name: "--width", description: "按钮宽度", default: "auto" },
-    { name: "--height", description: "按钮高度", default: "auto" },
+    { name: "--width", description: "宽度", default: "auto" },
+    { name: "--height", description: "高度", default: "auto" },
+    { name: "--background", description: "背景颜色", default: "#0d1127" },
+    {
+      name: "--background-hover",
+      description: "hover时背景颜色",
+      default: "#0f1c53",
+    },
+    { name: "--border-color", description: "边框颜色", default: "#5978f3" },
+    { name: "--padding", description: "内边距", default: "1rem 3rem" },
+    { name: "--font-size", description: "字体大小", default: "1.2rem" },
+    { name: "--border-radius", description: "圆角", default: "5rem" },
+    { name: "--color", description: "文字颜色", default: "white" },
+    { name: "--letter-spacing", description: "字间距", default: "0.075em" },
+    { name: "--line-1-color", description: "电流颜色1", default: "#f6de8d" },
+    { name: "--line-2-color", description: "电流颜色2", default: "#6bfeff" },
+    { name: "--line-duration", description: "电流动画时长", default: "3s" },
   ],
 };
 </script>

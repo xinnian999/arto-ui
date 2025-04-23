@@ -9,12 +9,12 @@
         <div class="name">{{ meta.name }}</div>
 
         <div class="actions">
-          <el-popover :width="400" trigger="click">
+          <el-popover :width="500" trigger="click">
             <template #reference>
               <el-button size="small"> 查看CSS变量 </el-button>
             </template>
             <el-table :data="meta.variables">
-              <el-table-column property="name" label="变量名" />
+              <el-table-column property="name" width="180" label="变量名" />
               <el-table-column property="description" label="描述" />
               <el-table-column property="default" label="默认值" />
             </el-table>
