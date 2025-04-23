@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm -C play/vue dev",
+    "dev:react": "pnpm -C play/react dev",
     "build": "pnpm -C packages/arto-ui build",
     "dev:docs": "pnpm -C docs dev"
   },

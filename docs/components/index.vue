@@ -8,7 +8,9 @@
       <el-tab-pane label="按钮 Button">
         <List :data-source="metas.filter((item) => item.type === 'button')" />
       </el-tab-pane>
-      <el-tab-pane label="开关 Switch">开关</el-tab-pane>
+      <el-tab-pane label="开关 Switch">
+        <List :data-source="metas.filter((item) => item.type === 'switch')" />
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
