@@ -157,7 +157,7 @@ button:active {
 </style>
 
 <template>
-  <button part="button">
+  <button v-part>
     <slot>Button</slot>
     <div class="star-1">
       <svg

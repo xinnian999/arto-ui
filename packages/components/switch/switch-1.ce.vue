@@ -57,9 +57,9 @@ input:checked + .slider:before {
 </style>
 
 <template>
-  <label class="switch">
+  <label class="switch" v-part>
     <input type="checkbox" v-model="modelValue" />
-    <span class="slider"></span>
+    <span class="slider aaa"></span>
   </label>
 </template>
 

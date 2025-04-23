@@ -1,15 +1,5 @@
 import { defineCustomElement } from "vue";
-
-const splitNamespace = (name: string) => {
-  return "ar-" + name.split("/").pop()?.split(".")[0];
-};
-
-const toCamelCase = (str: string) => {
-  return str
-    .split("-") // 将字符串按 '-' 分割成数组
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // 将每个单词的首字母大写
-    .join(""); // 将数组重新合并成字符串
-};
+import { splitNamespace, toCamelCase, setParts } from "./utils";
 
 const componentGlobs: {
   [path: string]: {
@@ -20,7 +10,7 @@ const componentGlobs: {
   eager: true,
 });
 
-const components: { [key: string]: { new (): void } } = Object.entries(
+const components: { [key: string]: { new(): void } } = Object.entries(
   componentGlobs
 ).reduce((acc, [k, v]) => {
   const componentName = splitNamespace(k);
@@ -29,6 +19,12 @@ const components: { [key: string]: { new (): void } } = Object.entries(
     ...acc,
     [toCamelCase(componentName)]: class {
       constructor() {
+        v.default.directives = {
+          part: {
+            mounted: setParts
+          }
+        }
+
         customElements.define(componentName, defineCustomElement(v.default));
       }
     },

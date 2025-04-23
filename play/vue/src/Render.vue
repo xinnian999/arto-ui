@@ -21,9 +21,7 @@ const change = (val) => {
 </script>
 
 <style lang="scss">
-.ar-switch {
-  // --color: #e1d7b3;
-  --width: 300px;
-  --height: 100px;
+.ar-switch::part(span-1) {
+  background-color: aquamarine;
 }
 </style>
