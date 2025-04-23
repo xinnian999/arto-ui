@@ -15,11 +15,13 @@ export const setParts = (el: any) => {
 
     // 给每个元素加上一个 part
     nodes.forEach((ele: any, index: number) => {
-        if (ele.className) {
-            ele.setAttribute('part', ele.className.split(' ')[0]);
-        } else {
-            const tagName = ele.tagName.toLowerCase();
-            ele.setAttribute("part", ele.className || `${tagName}-${index}`);
+        
+        if (ele.className && typeof ele.className == 'string') {
+            return ele.setAttribute('part', ele.className.split(' ')[0]);
         }
+
+        const tagName = ele.tagName.toLowerCase();
+        
+        ele.setAttribute("part", ele.className || `${tagName}-${index}`);
     });
 }
