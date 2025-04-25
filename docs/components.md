@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 组件
-sidebar: false
+sidebar: true
 ---
 
 <ClientOnly>

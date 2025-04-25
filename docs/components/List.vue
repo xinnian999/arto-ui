@@ -9,41 +9,50 @@
         <div class="name">{{ meta.name }}</div>
 
         <div class="actions">
-          <el-popover :width="500" trigger="click">
-            <template #reference>
-              <el-button size="small"> 查看CSS变量 </el-button>
-            </template>
-            <el-table :data="meta.variables">
-              <el-table-column property="name" width="180" label="变量名" />
-              <el-table-column property="description" label="描述" />
-              <el-table-column property="default" label="默认值" />
-            </el-table>
-          </el-popover>
+          <el-button size="small" @click="handleCustomize(meta)">
+            定制
+          </el-button>
 
-          <el-button type="primary" @click="copyCode(meta)" size="small"> 复制 </el-button>
+          <el-button type="primary" @click="copyCode(meta)" size="small">
+            复制
+          </el-button>
         </div>
       </div>
     </div>
+
+    <el-drawer
+      v-if="activeMeta"
+      v-model="drawer"
+      :title="activeMeta.name"
+      :size="700"
+    >
+      <div>
+        <div class="drawer-title">CSS变量</div>
+        <el-table :data="activeMeta.variables" :border="true">
+          <el-table-column property="name" label="变量名" />
+          <el-table-column property="description" width="180" label="描述" />
+          <el-table-column property="default" width="180" label="默认值" />
+        </el-table>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ElMessage } from "element-plus";
+import { ref } from "vue";
+import { copyCode } from "./utils";
 
 defineProps<{
   dataSource: any[];
 }>();
 
-const copyCode = async (meta: any) => {
-  const textArea = document.createElement("textarea");
-  textArea.value = `
-    <${meta.name}>${meta.slot}</${meta.name}>
-    `;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textArea);
-  ElMessage.success("复制成功");
+const drawer = ref(false);
+
+const activeMeta = ref<any>(null);
+
+const handleCustomize = (meta: any) => {
+  drawer.value = true;
+  activeMeta.value = meta;
 };
 </script>
 
@@ -87,5 +96,17 @@ const copyCode = async (meta: any) => {
       display: flex;
     }
   }
+}
+
+.el-drawer__header {
+  margin-bottom: 10px;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-left: 4px solid #409eff;
+  padding-left: 10px;
 }
 </style>
