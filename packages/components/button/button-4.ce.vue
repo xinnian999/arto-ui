@@ -1,86 +1,90 @@
-<template>
-  <button class="button">
-    <slot />
-    <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
-      <path
-        clip-rule="evenodd"
-        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-        fill-rule="evenodd"
-      ></path>
-    </svg>
-  </button>
-</template>
-
-<style>
-.button {
+<style scoped>
+button {
+  --border-width: 4px;
+  appearance: none;
   position: relative;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
-  background-color: var(--color, rgb(0 107 179));
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: var(--padding, 1em 2em);
+  border: 0;
+  background-color: #212121;
+  font-family: "Roboto", Arial, "Segoe UI", sans-serif;
+  font-size: var(--font-size, 18px);
+  font-weight: 500;
+  color: var(--color, #fff);
+  z-index: 2;
+  border-radius: var(--border-radius, 15px);
   cursor: pointer;
-  color: #ffff;
-  gap: 10px;
-  font-weight: bold;
-  border: 3px solid #ffffff4d;
-  outline: none;
-  overflow: hidden;
-  font-size: 15px;
   width: var(--width, auto);
   height: var(--height, auto);
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  transition: all 0.3s ease-in-out;
-}
-
-.button:hover {
-  transform: scale(1.05);
-  border-color: #fff9;
-}
-
-.button:hover .icon {
-  transform: translate(4px);
-}
-
-.button:hover::before {
-  animation: shine 1.5s ease-out infinite;
-}
-
-.button::before {
+button::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
   content: "";
   position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
+  left: 0;
   top: 0;
-  left: -100px;
-  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  border-radius: var(--border-radius, 15px);
+  background-image: conic-gradient(
+    #488cfb,
+    #29dbbc,
+    #ddf505,
+    #ff9f0e,
+    #e440bb,
+    #655adc,
+    #488cfb
+  );
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  -webkit-mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate(0);
+  animation: rotate-hue linear 500ms infinite;
+  animation-play-state: paused;
 }
 
-@keyframes shine {
-  0% {
-    left: -100px;
-  }
+button:hover::after {
+  animation-play-state: running;
+}
 
-  60% {
-    left: 100%;
-  }
-
+@keyframes rotate-hue {
   to {
-    left: 100%;
+    filter: hue-rotate(1turn);
   }
+}
+
+button,
+button::after {
+  box-sizing: border-box;
+}
+
+button:active {
+  --border-width: 5px;
 }
 </style>
+
+<template>
+  <button><slot>Hover me!</slot></button>
+</template>
+
+<script>
+export const meta = {
+  type: "button",
+  theme: "dark",
+  slot: "Hover me!",
+  variables: [
+    { name: "--width", description: "按钮宽度", default: "auto" },
+    { name: "--height", description: "按钮高度", default: "auto" },
+    { name: "--padding", description: "按钮内边距", default: "1em 2em" },
+    { name: "--font-size", description: "按钮字体大小", default: "18px" },
+    { name: "--color", description: "按钮文字颜色", default: "#fff" },
+    { name: "--border-radius", description: "按钮圆角", default: "15px" },
+  ],
+};
+</script>

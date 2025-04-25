@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm -C play/vue dev",
+    "dev:react": "pnpm -C play/react dev",
     "build": "pnpm -C packages/arto-ui build",
     "dev:docs": "pnpm -C docs dev"
   },
@@ -11,8 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "arto-ui": "workspace:*",
     "@arto-ui/components": "workspace:*",
+    "arto-ui": "workspace:*",
+    "element-plus": "^2.9.7",
     "vue": "^3.5.13"
   },
   "devDependencies": {

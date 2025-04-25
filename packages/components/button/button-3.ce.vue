@@ -1,66 +1,101 @@
+<style scoped>
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: var(--font-size, 15px);
+  width: var(--width, auto);
+  height: var(--height, auto);
+}
+
+button.learn-more {
+  font-weight: 600;
+  color: var(--text-color, #382b22);
+  text-transform: uppercase;
+  padding: var(--padding, 1.25em 2em);
+  background: var(--color, #fff0f0);
+  border: 2px solid #b18597;
+  border-radius: var(--border-radius, 0.75em);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.learn-more::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    box-shadow 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.learn-more:hover {
+  background: #ffe9e9;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+
+button.learn-more:hover::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.5em, -1em);
+  transform: translate3d(0, 0.5em, -1em);
+}
+
+button.learn-more:active {
+  background: #ffe9e9;
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+
+button.learn-more:active::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}
+</style>
+
 <template>
-  <button class="codepen-button">
-    <div class="content"><slot /></div>
+  <button class="learn-more">
+    <slot>Learn More</slot>
   </button>
 </template>
 
-<style>
-.codepen-button {
-  display: block;
-  cursor: pointer;
-  color: #fff;
-  position: relative;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: var(--border-width, 3px);
-  isolation: isolate;
-  border: none;
-}
-
-.codepen-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 400%;
-  height: 100%;
-  background: linear-gradient(
-    115deg,
-    #4fcf70,
-    #fad648,
-    #a767e5,
-    #12bcfe,
-    #44ce7b
-  );
-  background-size: 25% 100%;
-  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop
-    0.75s linear infinite;
-  animation-play-state: paused;
-  translate: -5% 0%;
-  transition: translate 0.25s ease-out;
-}
-
-.codepen-button:hover::before {
-  animation-play-state: running;
-  transition-duration: 0.75s;
-  translate: 0% 0%;
-}
-
-@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
-  to {
-    transform: translateX(-25%);
-  }
-}
-
-.codepen-button .content {
-  position: relative;
-  padding: 10px 15px;
-  font-size: 16px;
-  background: #000;
-  border-radius: 3px;
-  width: var(--width, 80px);
-  height: var(--height, auto);
-}
-</style>
+<script>
+export const meta = {
+  type: "button",
+  theme: "light",
+  slot: "Learn More",
+  variables: [
+    { name: "--width", description: "按钮宽度", default: "auto" },
+    { name: "--height", description: "按钮高度", default: "auto" },
+    { name: "--font-size", description: "字体大小", default: "15px" },
+    { name: "--text-color", description: "文字颜色", default: "#382b22" },
+    { name: "--padding", description: "内边距", default: "1.25em 2em" },
+    { name: "--border-radius", description: "圆角", default: "0.75em" },
+  ],
+};
+</script>

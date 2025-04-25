@@ -1,30 +1,48 @@
 import { defineCustomElement } from "vue";
+import { splitNamespace, toCamelCase, setParts } from "./utils";
 
-const toCamelCase = (str: string) => {
-  return str
-    .split("-") // 将字符串按 '-' 分割成数组
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // 将每个单词的首字母大写
-    .join(""); // 将数组重新合并成字符串
-};
-
-const componentGlobs = import.meta.glob<any>("./*/*.ce.vue", {
+const componentGlobs: {
+  [path: string]: {
+    default: any;
+    meta: any;
+  };
+} = import.meta.glob<any>("./*/*.ce.vue", {
   eager: true,
 });
 
-const components: { [key: string]: { new (): void } } = Object.entries(
-  componentGlobs
-).reduce((acc, [k, v]) => {
-  const fileName = "ar-" + k.split("/").pop()?.split(".")[0];
+const components: { [key: string]: { new(): void } } = Object.entries(componentGlobs).reduce(
+  (acc, [k, v]) => {
+    const componentName = splitNamespace(k);
+    const camelCaseName = toCamelCase(componentName);
+    const comp = v.default;
 
-  const value = class {
-    constructor() {
-      customElements.define(fileName, defineCustomElement(v.default));
+    // ✅ 给组件根元素注入 mounted 钩子（自动设置 part）
+    const originalMounted = comp.mounted;
+    comp.mounted = function () {
+      setParts(this.$el); // 自动给每个内部元素设置 part
+      if (typeof originalMounted === 'function') {
+        originalMounted.call(this);
+      } else if (Array.isArray(originalMounted)) {
+        originalMounted.forEach(fn => fn.call(this));
+      }
+    };
+
+    if (!customElements.get(componentName)) {
+      customElements.define(componentName, defineCustomElement(comp));
     }
-  };
 
-  return { ...acc, [toCamelCase(fileName)]: value };
-}, {});
+    return {
+      ...acc,
+      [camelCaseName]: class {}
+    };
+  },
+  {}
+);
+
+export const metas = Object.entries(componentGlobs)
+  .map(([k, v]) => {
+    return { ...v.meta, name: splitNamespace(k) };
+  })
+  .filter((v) => v);
 
 export default components;
-
-export const { FaLightButton1, FaLightButton2 } = components;
