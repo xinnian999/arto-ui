@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <ar-switch-1 />
+  </head>
+  <body>
+    <ar-switch-1 id="switch" />
 
     <script src="../../packages/arto-ui/dist/arto-ui.iife.js"></script>
 
     <script>
-        new ArtoUI();
+      new ArtoUI.default();
+
+      const switchElement = document.getElementById("switch");
+
+      // 监听自定义事件并在事件中使用这些数据
+      switchElement.addEventListener("change", () => {
+        console.log("change");
+      });
     </script>
-</body>
+  </body>
 </html>
