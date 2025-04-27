@@ -229,7 +229,7 @@ export const meta = {
   type: "button",
   theme: "dark",
   slot: "Button",
-  variables: [
+  cssVars: [
     { name: "--width", description: "宽度", default: "auto" },
     { name: "--height", description: "高度", default: "auto" },
     { name: "--background", description: "背景颜色", default: "#0d1127" },

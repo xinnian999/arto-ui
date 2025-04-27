@@ -10,11 +10,11 @@
 
         <div class="actions">
           <el-button size="small" @click="handleCustomize(meta)">
-            定制
+            定制化
           </el-button>
 
-          <el-button type="primary" @click="copyCode(meta)" size="small">
-            复制
+          <el-button type="primary" size="small" @click="copyCode(meta)">
+            复制代码
           </el-button>
         </div>
       </div>
@@ -26,10 +26,28 @@
       :title="activeMeta.name"
       :size="700"
     >
-      <div>
+      <div class="drawer">
+        <div :class="`${activeMeta.theme}Box previewBox`">
+          <component :is="activeMeta.name" />
+          <el-button
+            type="primary"
+            @click="copyCode(activeMeta)"
+            class="copy-code-btn"
+          >
+            复制代码
+          </el-button>
+        </div>
+
         <div class="drawer-title">CSS变量</div>
-        <el-table :data="activeMeta.variables" :border="true">
+        <el-table :data="activeMeta.cssVars" :border="true">
           <el-table-column property="name" label="变量名" />
+          <el-table-column property="description" width="180" label="描述" />
+          <el-table-column property="default" width="180" label="默认值" />
+        </el-table>
+        <div class="drawer-title">属性</div>
+        <el-table :data="activeMeta.props" :border="true">
+          <el-table-column property="label" label="属性名" />
+          <el-table-column property="type" width="180" label="类型" />
           <el-table-column property="description" width="180" label="描述" />
           <el-table-column property="default" width="180" label="默认值" />
         </el-table>
@@ -102,11 +120,23 @@ const handleCustomize = (meta: any) => {
   margin-bottom: 10px;
 }
 
-.drawer-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  border-left: 4px solid #409eff;
-  padding-left: 10px;
+.drawer {
+  .previewBox {
+    position: relative;
+    .copy-code-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+
+  .drawer-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-left: 4px solid #409eff;
+    padding-left: 10px;
+  }
 }
 </style>

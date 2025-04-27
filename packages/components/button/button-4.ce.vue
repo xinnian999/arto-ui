@@ -78,7 +78,7 @@ export const meta = {
   type: "button",
   theme: "dark",
   slot: "Hover me!",
-  variables: [
+  cssVars: [
     { name: "--width", description: "按钮宽度", default: "auto" },
     { name: "--height", description: "按钮高度", default: "auto" },
     { name: "--padding", description: "按钮内边距", default: "1em 2em" },

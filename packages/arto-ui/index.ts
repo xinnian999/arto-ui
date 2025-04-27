@@ -1,5 +1,5 @@
-import Register from "./register";
+import Register from "./lib/register";
 
 export default Register;
 
-export * from "@arto-ui/components";
+export { default as metas } from "./lib/metas";

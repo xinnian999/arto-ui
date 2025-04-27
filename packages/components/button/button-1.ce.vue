@@ -317,7 +317,7 @@ export const meta = {
   type: "button",
   theme: "dark",
   slot: "Button",
-  variables: [
+  cssVars: [
     { name: "--width", description: "宽度", default: "auto" },
     { name: "--height", description: "高度", default: "auto" },
     { name: "--color", description: "主题色", default: "#fec195" },

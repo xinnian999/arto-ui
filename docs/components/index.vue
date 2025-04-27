@@ -22,6 +22,8 @@ const query = new URLSearchParams(location.search);
 
 const activeTab = ref(query.get("type") || "button");
 
+console.log(metas);
+
 const dataSources = [
   {
     label: "按钮 Button",
@@ -32,6 +34,11 @@ const dataSources = [
     label: "开关 Switch",
     value: "switch",
     items: metas.filter((item) => item.type === "switch"),
+  },
+  {
+    label: "加载 Loading",
+    value: "loading",
+    items: metas.filter((item) => item.type === "loading"),
   },
 ];
 

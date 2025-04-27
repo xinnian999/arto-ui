@@ -89,7 +89,7 @@ export const meta = {
   type: "button",
   theme: "light",
   slot: "Learn More",
-  variables: [
+  cssVars: [
     { name: "--width", description: "按钮宽度", default: "auto" },
     { name: "--height", description: "按钮高度", default: "auto" },
     { name: "--font-size", description: "字体大小", default: "15px" },

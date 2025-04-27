@@ -2,9 +2,15 @@ import { ElMessage } from "element-plus";
 
 export const copyCode = async (meta: any) => {
   const textArea = document.createElement("textarea");
-  textArea.value = `
+  if (meta.slot) {
+    textArea.value = `
       <${meta.name}>${meta.slot}</${meta.name}>
       `;
+  } else {
+    textArea.value = `
+      <${meta.name} />
+      `;
+  }
   document.body.appendChild(textArea);
   textArea.select();
   document.execCommand("copy");

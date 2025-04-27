@@ -1,7 +1,7 @@
 import { defineCustomElement } from "vue";
-import { splitNamespace, toCamelCase, setParts } from "./utils";
+import { splitNamespace, toCamelCase, setParts } from "@arto-ui/utils";
 
-const componentGlobs: {
+export const componentGlobs: {
   [path: string]: {
     default: any;
     meta: any;
@@ -41,11 +41,5 @@ const components: { [key: string]: { new (): void } } = Object.entries(
     [camelCaseName]: RegisterComponent,
   };
 }, {});
-
-export const metas = Object.entries(componentGlobs)
-  .map(([k, v]) => {
-    return { ...v.meta, name: splitNamespace(k) };
-  })
-  .filter((v) => v);
 
 export default components;

@@ -1,27 +1,10 @@
 <template>
-  <ar-switch-1
-    class="ar-switch"
-    :value="value"
-    :change="change"
-  ></ar-switch-1>
+  <ar-loading-2 class="ar-loading"></ar-loading-2>
 </template>
 
-<script setup lang="ts">
-import { ref, watchEffect } from "vue";
-
-const value = ref(true);
-
-watchEffect(() => {
-  console.log('父组件',value.value);
-});
-
-const change = (val) => {
-  value.value = val;
-};
-</script>
-
 <style lang="scss">
-.ar-switch::part(span-1) {
-  background-color: aquamarine;
+.ar-loading {
+  --size: 200px;
+  --gradient: linear-gradient(#149438, #dcde98, #5ad1cd);
 }
 </style>

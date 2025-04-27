@@ -4,8 +4,8 @@
   font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 3.5em;
-  height: 2em;
+  width: var(--width, 3.5em);
+  height: var(--height, 2em);
 }
 
 /* Hide default HTML checkbox */
@@ -42,12 +42,12 @@
 }
 
 input:checked + .slider {
-  background-color: #007bff;
-  border: 1px solid #007bff;
+  background-color: var(--color, #007bff);
+  border: 1px solid var(--color, #007bff);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #007bff;
+  box-shadow: 0 0 1px var(--color, #007bff);
 }
 
 input:checked + .slider:before {
@@ -57,22 +57,11 @@ input:checked + .slider:before {
 </style>
 
 <template>
-  <label class="switch" v-part>
+  <label class="switch">
     <input type="checkbox" v-model="modelValue" />
-    <span class="slider aaa"></span>
+    <span class="slider"></span>
   </label>
 </template>
-
-<script lang="ts">
-export const meta = {
-  type: "switch",
-  theme: "light",
-  variables: [
-    { name: "--width", description: "宽度", default: "auto" },
-    { name: "--height", description: "高度", default: "auto" },
-  ],
-};
-</script>
 
 <script setup lang="ts">
 import { computed } from "vue";
@@ -87,7 +76,33 @@ const modelValue = computed({
     return props.value;
   },
   set(val: boolean) {
-    props.change(val);
+    props.change?.(val);
   },
 });
+</script>
+
+<script lang="ts">
+export const meta = {
+  type: "switch",
+  theme: "light",
+  cssVars: [
+    { name: "--width", description: "宽度", default: "3.5em" },
+    { name: "--height", description: "高度", default: "2em" },
+    { name: "--color", description: "主题色", default: "#007bff" },
+  ],
+  props: [
+    {
+      label: "value",
+      type: "boolean",
+      default: false,
+      description: "开关状态",
+    },
+    {
+      label: "change",
+      type: "(val: boolean) => void",
+      default: "() => {}",
+      description: "开关状态改变事件",
+    },
+  ],
+};
 </script>
