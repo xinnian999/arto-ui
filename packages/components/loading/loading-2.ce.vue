@@ -68,7 +68,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export const meta = {
   type: "loading",
   theme: "light",

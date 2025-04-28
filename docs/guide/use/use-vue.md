@@ -40,13 +40,14 @@ createApp(App).mount('#app')
 
 根据注册的组件名，驼峰转为小写分割
 
-<ar-button-3 @click="count++">点击 {{ count }} 次</ar-button-3>
+<ar-button-3 @click="count++"  style="margin-bottom:20px">点击 {{ count }} 次</ar-button-3>
 
 <script setup>
   import { ref } from 'vue'
 
   const count = ref(0)
 </script>
+
 
 ```vue
 <template>
