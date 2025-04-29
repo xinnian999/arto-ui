@@ -44,8 +44,13 @@
           <el-table-column property="description" width="180" label="描述" />
           <el-table-column property="default" width="180" label="默认值" />
         </el-table>
-        <div class="drawer-title">属性</div>
-        <el-table :data="activeMeta.props" :border="true">
+        
+        <div class="drawer-title" v-if="activeMeta.props">属性</div>
+        <el-table
+          :data="activeMeta.props"
+          :border="true"
+          v-if="activeMeta.props"
+        >
           <el-table-column property="label" label="属性名" />
           <el-table-column property="type" width="180" label="类型" />
           <el-table-column property="description" width="180" label="描述" />

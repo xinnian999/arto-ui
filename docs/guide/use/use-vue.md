@@ -6,9 +6,11 @@
 npm install arto-ui
 ```
 
-## 完整引入
+## 引入
 
-```ts
+::: code-group
+
+```ts [完整引入]
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -19,22 +21,21 @@ new ArtoUI()
 createApp(App).mount('#app')
 ```
 
-## 按需加载
-
-轻量级使用，用哪个组件就注册哪个
-
-```ts
+```ts [按需加载]
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { ArButton1, ArButton2 } from 'arto-ui'
+import { ArButton1, ArButton2, ... } from 'arto-ui'
 
 new ArButton1()
-
 new ArButton2()
+...
 
 createApp(App).mount('#app')
 ```
+
+:::
+
 
 ## 使用
 

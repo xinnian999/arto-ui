@@ -2,7 +2,7 @@
 
 ## 使用
 
-<ar-light-button-1>按钮</ar-light-button-1>
+<ar-button-3>按钮</ar-button-3>
 
 ```html
 <!doctype html>
@@ -12,7 +12,7 @@
   <title>Document</title>
 </head>
 <body>
-<ar-dark-button-1>按钮</ar-dark-button-1>
+<ar-button-3>按钮</ar-button-3>
 
 <script type="module">
   import ArtoUI from 'https://unpkg.com/arto-ui'
