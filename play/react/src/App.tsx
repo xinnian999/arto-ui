@@ -1,12 +1,10 @@
-import { useState } from "react";
 import "./App.css";
+import Render from "./Render";
 
 function App() {
-  const [value, setValue] = useState(true);
-
   return (
     <div className="main">
-      <ar-switch-1 value={value} change={setValue} />
+      <Render />
     </div>
   );
 }

@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "pnpm -C play/vue dev",
     "dev:react": "pnpm -C play/react dev",
+    "dev:docs": "pnpm -C docs dev",
     "build": "pnpm -C packages/arto-ui build",
-    "dev:docs": "pnpm -C docs dev"
+    "release": "pnpm -C packages/arto-ui release"
   },
   "keywords": [],
   "author": "",

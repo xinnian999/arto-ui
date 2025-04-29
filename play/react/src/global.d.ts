@@ -1,10 +1,9 @@
+import type { HTMLAttributes } from "react";
 
-declare namespace JSX {
+declare module "react" {
+  namespace JSX {
     interface IntrinsicElements {
-      "ar-switch-1": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      >;
+      [key: string]: HTMLAttributes<HTMLElement>;
     }
   }
-  
+}

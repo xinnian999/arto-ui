@@ -2,23 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <ar-switch-1 id="switch" />
+    <ar-button-3>点击0次</ar-button-3>
 
-    <script src="../../packages/arto-ui/dist/arto-ui.iife.js"></script>
+    <script type="module">
+      import ArtoUI from "https://unpkg.com/arto-ui";
+
+      new ArtoUI();
+    </script>
 
     <script>
-      new ArtoUI.default();
+      const button = document.querySelector("ar-button-3");
 
-      const switchElement = document.getElementById("switch");
+      let count = 0;
 
-      // 监听自定义事件并在事件中使用这些数据
-      switchElement.addEventListener("change", () => {
-        console.log("change");
-      });
+      button.onclick = () => {
+        count++;
+        button.textContent = `点击${count}次`;
+      };
     </script>
   </body>
 </html>

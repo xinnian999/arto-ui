@@ -25,10 +25,11 @@ createApp(App).mount('#app')
 //main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { ArButton1, ArButton2, ... } from 'arto-ui'
+import { ArButton1, ArButton2, ArButton3,... } from 'arto-ui'
 
 new ArButton1()
 new ArButton2()
+new ArButton3()
 ...
 
 createApp(App).mount('#app')

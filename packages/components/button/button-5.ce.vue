@@ -5,7 +5,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
-  color: var(--color, #000);
+  color: #000;
   background-color: #fff;
   border: none;
   border-radius: var(--border-radius, 45px);
@@ -15,6 +15,7 @@ button {
   outline: none;
   width: var(--width, auto);
   height: var(--height, auto);
+  margin: var(--margin, 0);
 }
 
 button:hover {
@@ -46,6 +47,7 @@ export const meta = {
     { name: "--border-radius", description: "圆角", default: "45px" },
     { name: "--font-size", description: "字体大小", default: "16px" },
     { name: "--padding", description: "内边距", default: "18px 40px" },
+    { name: "--margin", description: "外边距", default: "0" },
   ],
 };
 </script>

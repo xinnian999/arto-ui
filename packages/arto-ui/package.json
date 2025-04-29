@@ -1,10 +1,12 @@
 {
   "name": "arto-ui",
-  "version": "1.0.2",
-  "private": true,
+  "version": "1.0.7",
+  "private": false,
   "type": "module",
+  "main": "./dist/arto-ui.js",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "release": "npm publish"
   },
   "files": [
     "dist"
