@@ -1,10 +1,20 @@
 <template>
-  <ar-loading-3 class="loading3">按钮</ar-loading-3>
+  <ar-input-1 class="input1" label="用户名" :value="value" :change="change" />
 </template>
 
+<script setup lang="ts">
+import { ref } from "vue";
+
+const value = ref("2");
+
+const change = (val: string) => {
+  value.value = val;
+};
+</script>
+
 <style>
-.loading3 {
-  --color: 34, 205, 221;
+.input1 {
+  --width: 300px;
+  --color: #c650b0;
 }
 </style>
-

@@ -40,6 +40,11 @@ const dataSources = [
     value: "loading",
     items: metas.filter((item) => item.type === "loading"),
   },
+  {
+    label: "输入框 Input",
+    value: "input",
+    items: metas.filter((item) => item.type === "input"),
+  },
 ];
 
 watch(activeTab, (val) => {
