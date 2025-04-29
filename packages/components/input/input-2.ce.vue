@@ -8,7 +8,7 @@
   box-shadow: 10px 10px 20px #0e1013, -10px -10px 40px #383e4b;
   padding: 0.3rem;
   gap: 0.3rem;
-  width: var(--width, 300px);
+  width: var(--width, auto);
 }
 
 .input-container input {
@@ -81,9 +81,9 @@ const modelValue = computed({
 <script lang="ts">
 export const meta = {
   type: "input",
-  theme: "light",
+  theme: "dark",
   cssVars: [
-    { name: "--width", description: "宽度", default: "200px" },
+    { name: "--width", description: "宽度", default: "auto" },
     { name: "--color", description: "主题色", default: "#5264ae" },
   ],
   props: [
