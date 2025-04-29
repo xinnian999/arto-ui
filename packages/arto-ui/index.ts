@@ -5,4 +5,12 @@ export default Register;
 
 export { default as metas } from "./lib/metas";
 
-export const { ArButton1 } = components
+export const {
+  ArButton1,
+  ArButton2,
+  ArButton3,
+  ArButton4,
+  ArButton5,
+  ArSwitch1,
+  ArSwitch2,
+} = components;

@@ -1,10 +1,10 @@
 <template>
-  <ar-button-5 class="button5">按钮</ar-button-5>
+  <ar-loading-3 class="loading3">按钮</ar-loading-3>
 </template>
 
 <style>
-.button5 {
-  --color: rgb(34, 205, 221);
+.loading3 {
+  --color: 34, 205, 221;
 }
 </style>
 

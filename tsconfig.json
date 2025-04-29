@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ES2020",
+    "types": ["vite/client"],
+    "moduleResolution": "Bundler"
+  },
+  "include": ["docs", "packages", "docs/.vitepress/theme"]
+}
