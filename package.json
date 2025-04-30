@@ -17,6 +17,7 @@
     "@arto-ui/utils": "workspace:*",
     "arto-ui": "workspace:*",
     "element-plus": "^2.9.7",
+    "vite-plugin-restart": "^0.4.2",
     "vue": "^3.5.13"
   },
   "devDependencies": {

@@ -79,7 +79,7 @@
       <span
         class="label-char"
         :style="`--index: ${index}`"
-        v-for="(char, index) in label"
+        v-for="(char, index) in placeholder"
         :key="index"
         >{{ char }}</span
       >
@@ -92,12 +92,12 @@ import { computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    label?: string;
+    placeholder?: string;
     value: string;
     change: (e: any) => void;
   }>(),
   {
-    label: "Name",
+    placeholder: "Name",
     value: "",
     change: () => {},
   }
@@ -123,10 +123,10 @@ export const meta = {
   ],
   props: [
     {
-      label: "label",
+      label: "placeholder",
       type: "string",
       default: "Name",
-      description: "输入框的标签",
+      description: "输入框的占位符",
     },
     {
       label: "value",

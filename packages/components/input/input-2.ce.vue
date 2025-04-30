@@ -46,7 +46,12 @@
 
 <template>
   <div class="input-container">
-    <input :placeholder="placeholder" type="text" v-model="modelValue" />
+    <input
+      :placeholder="placeholder"
+      type="text"
+      v-model="modelValue"
+      :readonly="true"
+    />
   </div>
 </template>
 
@@ -59,12 +64,14 @@ const props = withDefaults(
     value: string;
     change: (e: any) => void;
     placeholder?: string;
+    readonly?: boolean;
   }>(),
   {
     label: "Name",
     value: "",
     change: () => {},
     placeholder: "Add Item",
+    readonly: false,
   }
 );
 
@@ -98,6 +105,12 @@ export const meta = {
       type: "(val: string) => void",
       default: "() => {}",
       description: "输入框的值改变事件",
+    },
+    {
+      label: "readonly",
+      type: "boolean",
+      default: "false",
+      description: "是否只读",
     },
   ],
 };

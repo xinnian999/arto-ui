@@ -1,5 +1,5 @@
 <template>
-  <ar-input-2 class="input1" label="用户名" :value="value" :change="change" />
+  <ar-input-3 class="input1" label="用户名" :value="value" :change="change" />
 </template>
 
 <script setup lang="ts">

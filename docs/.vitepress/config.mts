@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import sidebar from "./sidebar";
+import Restart from "vite-plugin-restart";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -25,5 +26,11 @@ export default defineConfig({
     server: {
       host: true,
     },
+    plugins: [
+      // @ts-ignore
+      Restart({
+        restart: ["packages/components/**/*.ce.vue"],
+      }),
+    ],
   },
 });
