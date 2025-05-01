@@ -1,5 +1,8 @@
 <style scoped>
-.container {
+.container{
+  position: relative;
+}
+.loading {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11,7 +14,7 @@
   background-image: var(--gradient, linear-gradient(#9b59b6, #84cdfa, #5ad1cd));
 }
 
-.container span {
+.loading span {
   position: absolute;
   border-radius: 50%;
   height: 100%;
@@ -20,23 +23,23 @@
   background-image: var(--gradient, linear-gradient(#9b59b6, #84cdfa, #5ad1cd));
 }
 
-.container span:nth-of-type(1) {
+.loading span:nth-of-type(1) {
   filter: blur(5px);
 }
 
-.container span:nth-of-type(2) {
+.loading span:nth-of-type(2) {
   filter: blur(10px);
 }
 
-.container span:nth-of-type(3) {
+.loading span:nth-of-type(3) {
   filter: blur(25px);
 }
 
-.container span:nth-of-type(4) {
+.loading span:nth-of-type(4) {
   filter: blur(50px);
 }
 
-.container::after {
+.loading::after {
   content: "";
   position: absolute;
   top: 10px;
@@ -61,10 +64,12 @@
 
 <template>
   <div class="container">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </template>
 

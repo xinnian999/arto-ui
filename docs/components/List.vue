@@ -89,7 +89,7 @@ const handleCustomize = (meta: any) => {
 }
 
 .darkBox {
-  background-color: #333;
+  background-color: #212121;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -57,7 +57,13 @@ watch(activeTab, (val) => {
 .components-container {
   padding: 10px;
   background-color: #eee;
-  min-height: calc(100vh - 65px);
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 75px;
+  box-sizing: border-box;
 }
 .tabs {
   height: 100%;
