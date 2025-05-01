@@ -80,46 +80,25 @@ label {
 
 <template>
   <div class="input-container">
-    <label for="name" class="name">{{ label }}</label>
     <input
-      :placeholder="placeholder"
+      placeholder="Enter your name"
+      v-bind="$attrs"
       type="text"
       class="input"
-      :readonly="readonly"
-      v-model="modelValue"
+      @input="onInput"
     />
     <div class="underline"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+const { change } = defineProps<{
+  change: (e: any) => void;
+}>();
 
-const props = withDefaults(
-  defineProps<{
-    label?: string;
-    value: string;
-    change: (e: any) => void;
-    placeholder?: string;
-    readonly?: boolean;
-  }>(),
-  {
-    label: "Name：",
-    value: "",
-    change: () => {},
-    placeholder: "Enter your name",
-    readonly: false,
-  }
-);
-
-const modelValue = computed({
-  get() {
-    return props.value;
-  },
-  set(val: boolean) {
-    props.change?.(val);
-  },
-});
+const onInput = (e: any) => {
+  change(e.target.value);
+};
 </script>
 
 <script lang="ts">
@@ -144,22 +123,10 @@ export const meta = {
       description: "输入框的值改变事件",
     },
     {
-      label: "label",
-      type: "string",
-      default: "Name：",
-      description: "输入框的标签",
-    },
-    {
-      label: "readonly",
-      type: "boolean",
-      default: "false",
-      description: "是否只读",
-    },
-    {
-      label: "placeholder",
-      type: "string",
-      default: "Enter your name",
-      description: "输入框的占位符",
+      label: "...",
+      type: "",
+      default: "",
+      description: "其他参数和事件与原生Input一致",
     },
   ],
 };

@@ -46,43 +46,19 @@
 
 <template>
   <div class="input-container">
-    <input
-      :placeholder="placeholder"
-      type="text"
-      v-model="modelValue"
-      :readonly="true"
-    />
+    <input v-bind="$attrs" :placeholder type="text" @input="onInput" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+const { change, placeholder = "Add Item" } = defineProps<{
+  change: (e: any) => void;
+  placeholder: string;
+}>();
 
-const props = withDefaults(
-  defineProps<{
-    label?: string;
-    value: string;
-    change: (e: any) => void;
-    placeholder?: string;
-    readonly?: boolean;
-  }>(),
-  {
-    label: "Name",
-    value: "",
-    change: () => {},
-    placeholder: "Add Item",
-    readonly: false,
-  }
-);
-
-const modelValue = computed({
-  get() {
-    return props.value;
-  },
-  set(val: boolean) {
-    props.change?.(val);
-  },
-});
+const onInput = (e: any) => {
+  change(e.target.value);
+};
 </script>
 
 <script lang="ts">
@@ -107,10 +83,10 @@ export const meta = {
       description: "输入框的值改变事件",
     },
     {
-      label: "readonly",
-      type: "boolean",
-      default: "false",
-      description: "是否只读",
+      label: "...",
+      type: "",
+      default: "",
+      description: "其他参数和事件与原生Input一致",
     },
   ],
 };

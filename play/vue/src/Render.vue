@@ -1,15 +1,24 @@
 <template>
-  <ar-input-3 class="input1" label="用户名" :value="value" :change="change" />
+  <ar-input-1 class="input1" :value="value" :change="onChange" @focus="onFocus" placeholder="用户名" />
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 
-const value = ref("2");
+const value = ref("");
 
-const change = (val: string) => {
+const onChange = (val: string) => {
   value.value = val;
 };
+
+const onFocus=()=>{
+  console.log(value.value);
+}
+
+watchEffect(()=>{
+  console.log(value.value);
+  
+})
 </script>
 
 <style>

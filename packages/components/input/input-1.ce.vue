@@ -69,17 +69,18 @@
 <template>
   <div class="wave-group">
     <input
+      v-bind="$attrs"
       required
       type="text"
       class="input"
-      v-model="modelValue"
+      @input="onInput"
     />
     <span class="bar"></span>
     <label class="label">
       <span
         class="label-char"
-        :style="`--index: ${index}`"
         v-for="(char, index) in placeholder"
+        :style="`--index: ${index}`"
         :key="index"
         >{{ char }}</span
       >
@@ -88,29 +89,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+const { placeholder = "Name", change = () => {} } = defineProps<{
+  change: (e: any) => void;
+  placeholder: string;
+}>();
 
-const props = withDefaults(
-  defineProps<{
-    placeholder?: string;
-    value: string;
-    change: (e: any) => void;
-  }>(),
-  {
-    placeholder: "Name",
-    value: "",
-    change: () => {},
-  }
-);
-
-const modelValue = computed({
-  get() {
-    return props.value;
-  },
-  set(val: boolean) {
-    props.change?.(val);
-  },
-});
+const onInput = (e: any) => {
+  change(e.target.value);
+};
 </script>
 
 <script lang="ts">
@@ -123,12 +109,6 @@ export const meta = {
   ],
   props: [
     {
-      label: "placeholder",
-      type: "string",
-      default: "Name",
-      description: "输入框的占位符",
-    },
-    {
       label: "value",
       type: "string",
       default: "",
@@ -139,6 +119,12 @@ export const meta = {
       type: "(val: string) => void",
       default: "() => {}",
       description: "输入框的值改变事件",
+    },
+    {
+      label: "...",
+      type: "",
+      default: "",
+      description: "其他参数和事件与原生Input一致",
     },
   ],
 };
